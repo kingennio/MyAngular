@@ -1,0 +1,37 @@
+<div class="container">
+    <form class="form-horizontal" name="form">
+        <legend>Sign up with Topoi</legend>
+        <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+                <input name="email" ng-init="email=''" ng-model="email" placeholder="Email" required type="email">
+                <span class="help-inline" ng-show="form.email.$error.email">Invalid email address</span>
+                <span class="help-inline" ng-show="form.email.$error.required">Required</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+                <input name="username" ng-init="username=''" ng-model="username" placeholder="Username" required type="text">
+                <span class="help-inline" ng-show="form.username.$error.required">Required</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input name="password" ng-init="password=''" ng-model="password" placeholder="Password" required type="password">
+                <span class="help-inline" ng-show="form.password.$error.required">Required</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <div>By clicking Sign up you are agreeing to our <a href="terms_of_use.html" target="_terms_of_use">terms of use</a> and <a href="privacy_policy.html" target="_privacy_policy">privacy policy</a>.</div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button class="btn btn-primary" ng-click="signUp()" ng-disabled="form.$invalid" type="submit">Sign up</button>
+            </div>
+        </div>
+    </form>
+</div>

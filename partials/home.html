@@ -1,0 +1,9 @@
+<div class="container">
+    <form class="form-horizontal" name="form">
+        <legend>Welcome to Topoi</legend>
+        <div class="control-group">
+            <div ng-hide="hasAuthorization()">Please <a href="#/login">log in</a> or <a href="#/signup">sign up</a>.</div>
+            <div ng-show="hasAuthorization()">Please <a href="#/logout">log out</a>.</div>
+        </div>
+    </form>
+</div>

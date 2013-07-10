@@ -1,0 +1,14 @@
+<div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+                <li><a href="#/home">Home</a></li>
+            </ul>
+            <ul class="nav pull-right">
+                <li ng-hide="hasAuthorization()"><a href="#/login">Log in</a></li>
+                <li ng-show="hasAuthorization()"><a href="#/logout">Log out</a></li>
+                <li ng-hide="hasAuthorization()"><a href="#/signup">Sign up</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
