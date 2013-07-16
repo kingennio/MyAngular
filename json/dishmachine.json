@@ -1,0 +1,17 @@
+{
+    "@id":"5",
+    "@href":"http://156.54.69.117:8080/swarm/base/profiles/dishmachine",
+    "totalduration":"45",
+    "totalenergy":"667.6333",
+    "energyphases":{
+        "energyphase":[
+            {"@id":"1","@duration":"2","@maxdelay":"0","@peakpower":"150.0","@meanpower":"70.0","@biasedpower":"138.0"},
+            {"@id":"2","@duration":"13","@maxdelay":"30","@peakpower":"1950.0","@meanpower":"1700.0","@biasedpower":"1912.5"},
+            {"@id":"3","@duration":"6","@maxdelay":"800","@peakpower":"160.0","@meanpower":"108.0","@biasedpower":"152.2"},
+            {"@id":"4","@duration":"5","@maxdelay":"4","@peakpower":"1960.0","@meanpower":"1250.0","@biasedpower":"1853.5"},
+            {"@id":"5","@duration":"2","@maxdelay":"0","@peakpower":"170.0","@meanpower":"166.0","@biasedpower":"169.4"},
+            {"@id":"6","@duration":"6","@maxdelay":"44","@peakpower":"1980.0","@meanpower":"1750.0","@biasedpower":"1945.5"},
+            {"@id":"7","@duration":"11","@maxdelay":"350","@peakpower":"17.0","@meanpower":"8.0","@biasedpower":"15.65"}
+        ]
+    }
+}

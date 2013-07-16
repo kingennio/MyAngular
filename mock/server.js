@@ -1,6 +1,8 @@
-var mockServer = angular.module('appMock', ['SwarmClient', 'ngMock']);
-mockServer.run(function($httpBackend) {
 
+
+angular.module('mockServer', ['ngMockE2E'])
+.run(function($httpBackend) {
+    console.log('RUNNING MOCK!');
     var customerList = [
         { _id: 123213, code: 'C1', name: 'Customer A'},
         { _id: 234234, code: 'C2', name: 'Customer B'},
@@ -53,7 +55,7 @@ mockServer.run(function($httpBackend) {
         return [200, "Success"];
     } );
 
-    $httpBackend.whenPUT(/\/base\/accounts(\/\w*)*/).respond(function(method, url, data, headers) {
+    $httpBackend.whenPUT(/\/base\/account\/(\w+)/).respond(function(method, url, data, headers) {
         console.log("PUT -> " + url);
 
         var o = angular.fromJson(data);

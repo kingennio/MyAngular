@@ -1,9 +1,25 @@
 <div class="container">
     <form class="form-horizontal" name="form">
-        <legend>Welcome to Topoi</legend>
+        <legend>Welcome to Swarm Scheduler App</legend>
+        <div class="messagesList" app-messages></div>
         <div class="control-group">
-            <div ng-hide="hasAuthorization()">Please <a href="#/login">log in</a> or <a href="#/signup">sign up</a>.</div>
-            <div ng-show="hasAuthorization()">Please <a href="#/logout">log out</a>.</div>
+            <div ng-hide="account">Please Login.</div>
+            <div ng-show="account">Welcome {{ account['@name'] }}
+            , your session key is {{ account['@key'] }}</div>
         </div>
+        <!--
+        <highchart id="chart1" series="chart.series" title="chart.title" options="chart.options"></highchart>
+         <chart value="{{ basicAreaChart }}" type="area" height="400"/>
+         <div id="container" style="width:100%; height:400px;"></div>
+        -->
     </form>
+    <input ng-model="chart.title.text">
+    <button ng-click="addSeries()">Add Series</button>
+    <button ng-click="addPoints()">Add Points to Random Series</button>
+    <button ng-click="removeRandomSeries()">Remove Random Series</button>
+    <button ng-click="swapChartType()">Line/Bar</button>
+
+    <highchart id="chart1" series="chart.series" title="chart.title" options="chart.options"></highchart>
+
+    <chart value="basicAreaChart" type="spline" height="400"/>
 </div>
