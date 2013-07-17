@@ -5,7 +5,7 @@
 
 <ul class="specs">
         <span>Specifications</span>
-        <dl>
+        <dl class="dl-horizontal">
             <dt>Slot Size</dt>
             <dd>{{ solar.slotsize }} (seconds), i.e. {{solar['@label']}}</dd>
             <dt>Number of Slots</dt>
@@ -18,6 +18,6 @@
 
 
 </ul>
-<highchart id="solar1" series="solarChart.series" title="solarChart.title" options="solarChart.options"></highchart>
-    <chart value="solarChart2" type="spline" height="400"/>
+<highchart id="solar1" series="solarChart.series" options="solarChart.options" style="width:90%; height:600px;"></highchart>
+    <chart value="solarChart2" type="areaspline" height="600"/>
 </div>
