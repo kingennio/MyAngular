@@ -1,0 +1,23 @@
+<div class="container" ng-cloack>
+<h1>Solar Power solar {{ solar.skycover }}</h1>
+
+<p><a ng-href="{{solar['@href']}}">URI Resource</a> </p>
+
+<ul class="specs">
+        <span>Specifications</span>
+        <dl>
+            <dt>Slot Size</dt>
+            <dd>{{ solar.slotsize }} (seconds), i.e. {{solar['@label']}}</dd>
+            <dt>Number of Slots</dt>
+            <dd>{{solar.slots}}</dd>
+            <dt>Total Duration</dt>
+            <dd>{{ solar.totalhours }} ({{ solar.totsalseconds }})</dd>
+            <dt>Max Peak Power</dt>
+            <dd>{{solar.peakpower}}</dd>
+        </dl>
+
+
+</ul>
+<highchart id="solar1" series="solarChart.series" title="solarChart.title" options="solarChart.options"></highchart>
+    <chart value="solarChart2" type="spline" height="400"/>
+</div>
