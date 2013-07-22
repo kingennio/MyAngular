@@ -1,0 +1,234 @@
+{
+    "powerprofile": [
+        {
+            "@id": "5",
+            "@href": "http:\/\/156.54.69.117:8080\/swarm\/base\/profiles\/dishmachine",
+            "totalduration": "45",
+            "totalenergy": "667.6333",
+            "energyphases": {
+                "energyphase": [
+                    {
+                        "@id": "1",
+                        "@duration": "2",
+                        "@maxdelay": "0",
+                        "@peakpower": "150.0",
+                        "@meanpower": "70.0",
+                        "@biasedpower": "138.0"
+                    },
+                    {
+                        "@id": "2",
+                        "@duration": "13",
+                        "@maxdelay": "30",
+                        "@peakpower": "1950.0",
+                        "@meanpower": "1700.0",
+                        "@biasedpower": "1912.5"
+                    },
+                    {
+                        "@id": "3",
+                        "@duration": "6",
+                        "@maxdelay": "800",
+                        "@peakpower": "160.0",
+                        "@meanpower": "108.0",
+                        "@biasedpower": "152.2"
+                    },
+                    {
+                        "@id": "4",
+                        "@duration": "5",
+                        "@maxdelay": "4",
+                        "@peakpower": "1960.0",
+                        "@meanpower": "1250.0",
+                        "@biasedpower": "1853.5"
+                    },
+                    {
+                        "@id": "5",
+                        "@duration": "2",
+                        "@maxdelay": "0",
+                        "@peakpower": "170.0",
+                        "@meanpower": "166.0",
+                        "@biasedpower": "169.4"
+                    },
+                    {
+                        "@id": "6",
+                        "@duration": "6",
+                        "@maxdelay": "44",
+                        "@peakpower": "1980.0",
+                        "@meanpower": "1750.0",
+                        "@biasedpower": "1945.5"
+                    },
+                    {
+                        "@id": "7",
+                        "@duration": "11",
+                        "@maxdelay": "350",
+                        "@peakpower": "17.0",
+                        "@meanpower": "8.0",
+                        "@biasedpower": "15.65"
+                    }
+                ]
+            }
+        },
+        {
+            "@id": "13",
+            "@href": "http:\/\/156.54.69.117:8080\/swarm\/base\/profiles\/indesitcotone60full",
+            "totalduration": "169",
+            "totalenergy": "1519.3333",
+            "energyphases": {
+                "energyphase": [
+                    {
+                        "@id": "1",
+                        "@duration": "16",
+                        "@maxdelay": "0",
+                        "@peakpower": "1900.0",
+                        "@meanpower": "1600.0",
+                        "@biasedpower": "1855.0"
+                    },
+                    {
+                        "@id": "2",
+                        "@duration": "30",
+                        "@maxdelay": "0",
+                        "@peakpower": "1900.0",
+                        "@meanpower": "1600.0",
+                        "@biasedpower": "1855.0"
+                    },
+                    {
+                        "@id": "3",
+                        "@duration": "64",
+                        "@maxdelay": "0",
+                        "@peakpower": "200.0",
+                        "@meanpower": "90.0",
+                        "@biasedpower": "183.5"
+                    },
+                    {
+                        "@id": "4",
+                        "@duration": "59",
+                        "@maxdelay": "20",
+                        "@peakpower": "1600.0",
+                        "@meanpower": "200.0",
+                        "@biasedpower": "1390.0"
+                    }
+                ]
+            }
+        },
+        {
+            "@id": "1",
+            "@href": "http:\/\/156.54.69.117:8080\/swarm\/base\/profiles\/washingmachine",
+            "totalduration": "106",
+            "totalenergy": "243.95",
+            "energyphases": {
+                "energyphase": [
+                    {
+                        "@id": "1",
+                        "@duration": "9",
+                        "@maxdelay": "0",
+                        "@peakpower": "100.0",
+                        "@meanpower": "35.0",
+                        "@biasedpower": "90.25"
+                    },
+                    {
+                        "@id": "2",
+                        "@duration": "8",
+                        "@maxdelay": "0",
+                        "@peakpower": "1670.0",
+                        "@meanpower": "1500.0",
+                        "@biasedpower": "1644.5"
+                    },
+                    {
+                        "@id": "3",
+                        "@duration": "13",
+                        "@maxdelay": "40",
+                        "@peakpower": "23.0",
+                        "@meanpower": "10.0",
+                        "@biasedpower": "21.05"
+                    },
+                    {
+                        "@id": "4",
+                        "@duration": "3",
+                        "@maxdelay": "5",
+                        "@peakpower": "72.0",
+                        "@meanpower": "52.0",
+                        "@biasedpower": "69.0"
+                    },
+                    {
+                        "@id": "5",
+                        "@duration": "5",
+                        "@maxdelay": "5",
+                        "@peakpower": "4.0",
+                        "@meanpower": "4.0",
+                        "@biasedpower": "4.0"
+                    },
+                    {
+                        "@id": "6",
+                        "@duration": "3",
+                        "@maxdelay": "120",
+                        "@peakpower": "72.0",
+                        "@meanpower": "47.0",
+                        "@biasedpower": "68.25"
+                    },
+                    {
+                        "@id": "7",
+                        "@duration": "4",
+                        "@maxdelay": "12",
+                        "@peakpower": "4.0",
+                        "@meanpower": "4.0",
+                        "@biasedpower": "4.0"
+                    },
+                    {
+                        "@id": "8",
+                        "@duration": "4",
+                        "@maxdelay": "0",
+                        "@peakpower": "71.0",
+                        "@meanpower": "48.0",
+                        "@biasedpower": "67.55"
+                    },
+                    {
+                        "@id": "9",
+                        "@duration": "4",
+                        "@maxdelay": "0",
+                        "@peakpower": "73.0",
+                        "@meanpower": "52.0",
+                        "@biasedpower": "69.85"
+                    },
+                    {
+                        "@id": "10",
+                        "@duration": "6",
+                        "@maxdelay": "1600",
+                        "@peakpower": "4.0",
+                        "@meanpower": "4.0",
+                        "@biasedpower": "4.0"
+                    },
+                    {
+                        "@id": "11",
+                        "@duration": "15",
+                        "@maxdelay": "4",
+                        "@peakpower": "58.0",
+                        "@meanpower": "30.0",
+                        "@biasedpower": "53.800003"
+                    },
+                    {
+                        "@id": "12",
+                        "@duration": "8",
+                        "@maxdelay": "100",
+                        "@peakpower": "191.0",
+                        "@meanpower": "80.0",
+                        "@biasedpower": "174.35"
+                    },
+                    {
+                        "@id": "13",
+                        "@duration": "9",
+                        "@maxdelay": "800",
+                        "@peakpower": "100.0",
+                        "@meanpower": "35.0",
+                        "@biasedpower": "90.25"
+                    },
+                    {
+                        "@id": "14",
+                        "@duration": "15",
+                        "@maxdelay": "30",
+                        "@peakpower": "2.0",
+                        "@meanpower": "2.0",
+                        "@biasedpower": "2.0"
+                    }
+                ]
+            }
+        }
+    ]
+}

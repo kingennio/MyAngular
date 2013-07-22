@@ -1,9 +1,13 @@
-
+<div class="container" ng-cloack>
 <h1>Power Profile Prototype {{profile['@id']}}</h1>
 
 <p><a ng-href="{{profile['@href']}}">URI Resource</a> </p>
 
-<ul class="specs">
+    <highchart id="prole1" series="chart.series" options="chart.options" title="chart.title" style="width:100%; height:80%;"></highchart>
+
+    <chart value="profileChart" type="area" width="1000" height="800"/>
+
+    <ul class="specs">
         <span>Specifications</span>
         <dl>
             <dt>Total Duration (minutes)</dt>
@@ -49,3 +53,6 @@
             </dd>
         </dl>
 </ul>
+
+
+</div>
