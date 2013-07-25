@@ -42,28 +42,30 @@ angular.module('highcharts-ng', [])
                 var chart = new Highcharts.Chart(mergedOptions);
 
                 scope.$watch("series", function (newSeries, oldSeries) {
-                    if (!newSeries) return
-                    ensureIds(newSeries);
-                    var ids = []
+                    if (newSeries) {
 
-                    //Find series to add or update
-                    newSeries.forEach(function (s) {
-                        ids.push(s.id)
-                        var chartSeries = chart.get(s.id);
-                        if (chartSeries) {
-                            chartSeries.update(angular.copy(s), false);
-                        } else {
-                            chart.addSeries(angular.copy(s), false)
-                        }
-                    });
-                    //Now remove any missing series
-                    chart.series.forEach(function (s) {
-                        if (ids.indexOf(s.options.id) < 0) {
-                            s.remove(false);
-                        }
-                    });
-                    chart.redraw();
+                        ensureIds(newSeries);
+                        var ids = []
 
+                        //Find series to add or update
+                        newSeries.forEach(function (s) {
+                            ids.push(s.id)
+                            var chartSeries = chart.get(s.id);
+                            if (chartSeries) {
+                                chartSeries.update(angular.copy(s), false);
+                            } else {
+                                chart.addSeries(angular.copy(s), false)
+                            }
+                        });
+                        //Now remove any missing series
+                        chart.series.forEach(function (s) {
+                            if (ids.indexOf(s.options.id) < 0) {
+                                s.remove(false);
+                            }
+                        });
+                        chart.redraw();
+
+                    }
                 }, true);
                 scope.$watch("title", function (newTitle) {
                     chart.setTitle(newTitle, true);
@@ -72,7 +74,7 @@ angular.module('highcharts-ng', [])
                     //do nothing when called on registration
                     if (newOptions === oldOptions) return;
                     chart.destroy()
-                    var mergedOptions = getMergedOptions(element, newOptions)
+                    var mergedOptions = getMergedOptions(element, newOptions);
                     chart = new Highcharts.Chart(mergedOptions);
                     chart.setTitle(scope.title, true);
                     ensureIds(scope.series);
