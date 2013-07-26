@@ -42,30 +42,27 @@ angular.module('highcharts-ng', [])
                 var chart = new Highcharts.Chart(mergedOptions);
 
                 scope.$watch("series", function (newSeries, oldSeries) {
-                    if (newSeries) {
+                    ensureIds(newSeries);
+                    var ids = []
 
-                        ensureIds(newSeries);
-                        var ids = []
+                    //Find series to add or update
+                    newSeries.forEach(function (s) {
+                        ids.push(s.id)
+                        var chartSeries = chart.get(s.id);
+                        if (chartSeries) {
+                            chartSeries.update(angular.copy(s), false);
+                        } else {
+                            chart.addSeries(angular.copy(s), false)
+                        }
+                    });
+                    //Now remove any missing series
+                    chart.series.forEach(function (s) {
+                        if (ids.indexOf(s.options.id) < 0) {
+                            s.remove(false);
+                        }
+                    });
+                    chart.redraw();
 
-                        //Find series to add or update
-                        newSeries.forEach(function (s) {
-                            ids.push(s.id)
-                            var chartSeries = chart.get(s.id);
-                            if (chartSeries) {
-                                chartSeries.update(angular.copy(s), false);
-                            } else {
-                                chart.addSeries(angular.copy(s), false)
-                            }
-                        });
-                        //Now remove any missing series
-                        chart.series.forEach(function (s) {
-                            if (ids.indexOf(s.options.id) < 0) {
-                                s.remove(false);
-                            }
-                        });
-                        chart.redraw();
-
-                    }
                 }, true);
                 scope.$watch("title", function (newTitle) {
                     chart.setTitle(newTitle, true);
