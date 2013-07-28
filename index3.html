@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="swarmApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Swarmy, a dashboard App built with AngularJS, Twitter Bootstrap, and Typescript.">
+    <meta name="author" content="Ennio Grasso">
+
+    <title>Swarmy SPA Client</title>
+
+
+    <link rel="stylesheet" href="css/bootstrap3.css">
+    <link rel="stylesheet" href="css/docs.css"/>
+    <link rel="stylesheet" href="css/bootstrap-glyphicons.css"/>
+    <!--
+    <style type="text/css">
+        body { padding-top: 70px; }
+    </style>
+    -->
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+
+<!-- Docs master nav -->
+<div class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Swarmy App</a>
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-home">  Home</span></a>
+                    </li>
+                    <li><a href="#about"><span class="glyphicon glyphicon-info-sign">  About</span></a>
+                    </li>
+
+                </ul>
+                <form class="navbar-form pull-right">
+                    <input class="span2" type="text" placeholder="Email">
+                    <input class="span2" type="password" placeholder="Password">
+                    <button type="submit" class="btn btn-default">Sign in</button>
+                </form>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+<!-- topbar ends -->
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <!-- left menu starts -->
+        <div class="col-lg-2">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        Cras justo odio
+                    </a>
+                    <a href="#" class="list-group-item">Dapibus ac facilisis in
+                    </a>
+                    <a href="#" class="list-group-item">Morbi leo risus
+                    </a>
+                    <a href="#" class="list-group-item">Porta ac consectetur ac
+                    </a>
+                    <a href="#" class="list-group-item">Vestibulum at eros
+                    </a>
+            </div>
+            <!--/.well -->
+        </div>
+        <!--/span-->
+        <!-- left menu ends -->
+
+        <noscript>
+            <div class="alert alert-block span10">
+                <h4 class="alert-heading">Warning!</h4>
+
+                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                    enabled to use this site.</p>
+            </div>
+        </noscript>
+
+
+        <!-- content starts -->
+        <div class="span10">
+            <div class="row-fluid" ng-view></div>
+        </div>
+    </div>
+    <!--/fluid-row-->
+</div>
+
+
+<!-- external javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+-->
+<script src="lib/angular.js"></script>
+<script src="lib/angular-resource.js"></script>
+<script src="lib/angular-mocks.js"></script>
+<script src="lib/ui-bootstrap-tpls-0.4.0.js"></script>
+<script src="lib/jquery-2.0.3.min.js"></script>
+<script src="lib/highcharts.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/highcharts-ng.js"></script>
+</body>
+</html>
