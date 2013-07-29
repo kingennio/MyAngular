@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Swarmy, a dashboard App built with AngularJS, Twitter Bootstrap, and Typescript.">
+    <meta name="description"
+          content="Swarmy App, a dashboard App built with AngularJS, Twitter Bootstrap, and Typescript.">
     <meta name="author" content="Ennio Grasso">
 
     <title>Swarmy SPA Client</title>
@@ -11,38 +12,44 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="css/bs-docs.css"/>
-    <link rel="stylesheet" href="css/google-prettify.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-<body>
+
+<body class="ng-cloak" ng-controller="HomeController">
+
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-        <div class="container">
+        <div class="container-fluid">
+            <!--
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="#">SwarmyApp</a>
-
+            -->
+            <a class="brand" href="#">Swarmy App</a>
+            <!--
             <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li class="active"><a href="#"><i class="icon-home"></i><span class="hidden-tablet"> Home</span></a>
-                    </li>
-                    <li><a href="#about"><i class="icon-info-sign"></i><span class="hidden-tablet"> About</span></a>
-                    </li>
+            -->
+            <ul class="nav">
+                <li class="active"><a href="#"><i class="icon-home"></i><span class="hidden-tablet"> Home</span></a>
+                </li>
+                <li><a href="#about"><i class="icon-info-sign"></i><span class="hidden-tablet"> About</span></a>
+                </li>
 
-                </ul>
-                <form class="navbar-form pull-right">
-                    <input class="span2" type="text" placeholder="Email">
-                    <input class="span2" type="password" placeholder="Password">
-                    <button type="submit" class="btn">Sign in</button>
-                </form>
+            </ul>
+            <form class="navbar-form pull-right">
+                <input class="span2" type="text" placeholder="Email">
+                <input class="span2" type="password" placeholder="Password">
+                <button type="submit" class="btn">Sign in</button>
+            </form>
+            <!--
             </div>
             <!--/.nav-collapse -->
         </div>
@@ -52,60 +59,45 @@
 
 <div class="container-fluid">
     <div class="row-fluid">
-        <!-- left menu starts -->
-        <div class="span2 main-menu-span">
-            <div class="well well-small nav-collapse sidebar-nav">
-                <ul class="nav nav-tabs nav-stacked main-menu">
-                    <li class="nav-header hidden-tablet">Dashboard</li>
-                    <li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></i>
-                    </a></li>
-                    <li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a>
-                    </li>
-                    <li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a>
-                    </li>
-                    <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a>
-                    </li>
-                    <li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span
-                            class="hidden-tablet"> Typography</span></a></li>
-                    <li><a class="ajax-link" href="gallery.html"><i class="icon-picture"></i><span
-                            class="hidden-tablet"> Gallery</span></a></li>
-
-                    <li><a class="ajax-link" href="table.html"><i class="icon-align-justify"></i><span
-                            class="hidden-tablet"> Tables</span></a></li>
-                    <li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span
-                            class="hidden-tablet"> Calendar</span></a></li>
-                    <li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span
-                            class="hidden-tablet"> Grid</span></a></li>
-                    <li><a class="ajax-link" href="file-manager.html"><i class="icon-folder-open"></i><span
-                            class="hidden-tablet"> File Manager</span></a></li>
-                    <li><a href="tour.html"><i class="icon-globe"></i><span class="hidden-tablet"> Tour</span></a></li>
-                    <li><a class="ajax-link" href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a>
-                    </li>
-                    <li><a href="error.html"><i class="icon-ban-circle"></i><span
-                            class="hidden-tablet"> Error Page</span></a></li>
-                    <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a>
-                    </li>
-                </ul>
-            </div>
-            <!--/.well -->
+        <!-- left menu starts  -->
+        <div class="span2" id="sidebar">
+            <!--<div class="well well-small nav-collapse sidebar-nav">
+                <ul class="nav nav-tabs nav-stacked main-menu"> -->
+            <ul class="nav nav-tabs nav-stacked">
+                <li class="nav-header hidden-tablet">Main</li>
+                <li><a href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+                <li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a>
+                </li>
+                <li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
+                <li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a>
+                </li>
+                <li><a href="typography.html"><i class="icon-font"></i><span
+                        class="hidden-tablet"> Typography</span></a></li>
+                <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a>
+                </li>
+                <li><a href="table.html"><i class="icon-align-justify"></i><span
+                        class="hidden-tablet"> Tables</span></a></li>
+                <li><a href="calendar.html"><i class="icon-calendar"></i><span
+                        class="hidden-tablet"> Calendar</span></a></li>
+                <li><a href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>
+                <li><a href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a>
+                </li>
+                <li><a href="tour.html"><i class="icon-globe"></i><span class="hidden-tablet"> Tour</span></a></li>
+                <li><a href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
+                <li><a href="error.html"><i class="icon-ban-circle"></i><span
+                        class="hidden-tablet"> Error Page</span></a></li>
+                <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a>
+                </li>
+            </ul>
         </div>
+        <!--/.well -->
+
         <!--/span-->
         <!-- left menu ends -->
 
-        <noscript>
-            <div class="alert alert-block span10">
-                <h4 class="alert-heading">Warning!</h4>
-
-                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-                    enabled to use this site.</p>
-            </div>
-        </noscript>
-
-
         <!-- content starts -->
-        <div class="span10">
-            <div class="row-fluid" ng-view></div>
-        </div>
+        <div class="span10" id="content" ng-view></div>
+
     </div>
     <!--/fluid-row-->
 </div>
