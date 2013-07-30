@@ -1,6 +1,6 @@
 'use strict';
 
-var cleanProperties = function(jsonObject) {
+var cleanProperties = function (jsonObject) {
 
 }
 
@@ -16,43 +16,45 @@ var clearsky = {
     "values": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 2.184964E-27 1.1865935 4.124882 8.533645 14.26544 21.207275 29.259842 38.329575 48.324993 59.15482 70.727066 82.948555 95.72486 108.96035 122.55841 136.42174 150.4528 164.55412 178.6289 192.5814 206.31741 219.74487 232.77423 245.31908 257.2965 268.62772 279.23834 289.05893 298.02536 306.07922 313.16815 319.246 324.27344 328.21783 331.05365 332.76248 333.33334 332.76248 331.05365 328.21783 324.27344 319.246 313.16815 306.07922 298.02536 289.05893 279.23834 268.62772 257.2965 245.31908 232.77423 219.74487 206.31741 192.5814 178.6289 164.55412 150.4528 136.42174 122.55841 108.96035 95.72486 82.948555 70.727066 59.15482 48.324993 38.329575 29.259842 21.207275 14.26544 8.533645 4.124882 1.1865935 2.184964E-27 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
 }
 
-var partlyclouded = {"@label":"TenMinutes","@href":"http://156.54.69.117:8080/swarm/base/solars/partlyclouded","slotsize":"600","slots":"288","totsalseconds":"172800","totalhours":"48:00:00","skycover":"PartlyClouded","peakpower":"2000.0","values":"0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.1185209E-27 0.60743773 2.1115985 6.8785367 11.498645 17.094105 23.144587 30.318762 38.225155 22.744514 27.193943 31.893 61.437263 69.931946 78.65933 111.34235 122.79398 134.30295 81.703896 88.08569 94.36847 159.43755 168.8911 177.9931 101.478516 105.94758 110.13245 72.50696 74.75608 76.7763 208.91823 212.97284 216.3267 60.05976 60.578682 60.891376 292.73294 292.2316 290.7309 186.78423 184.53952 181.67848 45.295876 44.27055 43.10566 124.76035 120.5217 115.94206 41.75384 39.810158 37.77439 129.08237 121.194824 113.12603 176.51923 162.61067 148.67589 88.38755 79.40551 70.59534 75.147644 65.11776 55.523426 35.434124 28.946987 22.959665 15.385512 11.151284 7.501104 7.1923347 3.4765372 1.000086 1.0133817E-27 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.3956665E-28 0.18440926 0.6410506 2.7158413 4.5399914 6.7492375 24.981348 32.724865 41.258713 23.825853 28.48682 33.409283 59.06948 67.23678 75.62781 133.65652 147.40318 161.21867 30.441807 32.819584 35.16046 184.6071 195.55304 206.09192 232.88855 243.14485 252.74892 95.4234 98.38338 101.0421 130.36159 132.8916 134.98436 254.3604 256.55807 257.8824 235.34628 234.94322 233.73672 252.27261 249.24089 245.37674 92.785736 90.685425 88.29922 102.27279 98.798134 95.04396 34.929184 33.303192 31.600172 80.59729 75.67241 70.63436 103.78192 95.60459 87.41184 118.29918 106.27748 94.48582 73.0606 63.30927 53.981396 22.69375 18.53907 14.704496 8.810147 6.385517 4.295328 6.2740846 3.0326853 0.8724043 1.2123662E-27 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0"}
+var partlyclouded = {"@label": "TenMinutes", "@href": "http://156.54.69.117:8080/swarm/base/solars/partlyclouded", "slotsize": "600", "slots": "288", "totsalseconds": "172800", "totalhours": "48:00:00", "skycover": "PartlyClouded", "peakpower": "2000.0", "values": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.1185209E-27 0.60743773 2.1115985 6.8785367 11.498645 17.094105 23.144587 30.318762 38.225155 22.744514 27.193943 31.893 61.437263 69.931946 78.65933 111.34235 122.79398 134.30295 81.703896 88.08569 94.36847 159.43755 168.8911 177.9931 101.478516 105.94758 110.13245 72.50696 74.75608 76.7763 208.91823 212.97284 216.3267 60.05976 60.578682 60.891376 292.73294 292.2316 290.7309 186.78423 184.53952 181.67848 45.295876 44.27055 43.10566 124.76035 120.5217 115.94206 41.75384 39.810158 37.77439 129.08237 121.194824 113.12603 176.51923 162.61067 148.67589 88.38755 79.40551 70.59534 75.147644 65.11776 55.523426 35.434124 28.946987 22.959665 15.385512 11.151284 7.501104 7.1923347 3.4765372 1.000086 1.0133817E-27 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.3956665E-28 0.18440926 0.6410506 2.7158413 4.5399914 6.7492375 24.981348 32.724865 41.258713 23.825853 28.48682 33.409283 59.06948 67.23678 75.62781 133.65652 147.40318 161.21867 30.441807 32.819584 35.16046 184.6071 195.55304 206.09192 232.88855 243.14485 252.74892 95.4234 98.38338 101.0421 130.36159 132.8916 134.98436 254.3604 256.55807 257.8824 235.34628 234.94322 233.73672 252.27261 249.24089 245.37674 92.785736 90.685425 88.29922 102.27279 98.798134 95.04396 34.929184 33.303192 31.600172 80.59729 75.67241 70.63436 103.78192 95.60459 87.41184 118.29918 106.27748 94.48582 73.0606 63.30927 53.981396 22.69375 18.53907 14.704496 8.810147 6.385517 4.295328 6.2740846 3.0326853 0.8724043 1.2123662E-27 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0"}
 
 /* Controllers */
 
 angular.module('swarmApp.controllers', [])
 
-    .controller("HomeController", ["$scope", "$rootScope", function($scope, $rootScope) {
+    .controller("HomeController", ["$scope", "$rootScope", function ($scope, $rootScope) {
         $scope.account = $rootScope.account
 
 
         $scope.solarChart = {
-                chart: {
-                    type: 'spline'
-                },
-                xAxis: {
-                    type: 'datetime'
-                },
-                yAxis: {
-                },
-                plotOptions: {
-                    spline: {
-                        lineWidth: 2,
-                        enableMouseTracking: false,
-                        marker: {
-                            enabled: false
-                        },
-                        pointInterval: 600000, // ten minutes
-                        pointStart: Date.UTC(2013, 1, 1, 0, 0, 0)
-                    }
-                },
-
-                series: [{
-                    data: partlyclouded.values.split(' ').map(parseFloat)
-                }],
-                title: {
-                    text: partlyclouded.skycover
+            chart: {
+                type: 'spline'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+            },
+            plotOptions: {
+                spline: {
+                    lineWidth: 2,
+                    enableMouseTracking: false,
+                    marker: {
+                        enabled: false
+                    },
+                    pointInterval: 600000, // ten minutes
+                    pointStart: Date.UTC(2013, 1, 1, 0, 0, 0)
                 }
+            },
+
+            series: [
+                {
+                    data: partlyclouded.values.split(' ').map(parseFloat)
+                }
+            ],
+            title: {
+                text: partlyclouded.skycover
+            }
         }
 
         $scope.tariffChart = {
@@ -80,9 +82,11 @@ angular.module('swarmApp.controllers', [])
                 }
             },
 
-            series: [{
-                data: tariffs.tariffprofile[0].values.split(' ').map(parseFloat)
-            }],
+            series: [
+                {
+                    data: tariffs.tariffprofile[0].values.split(' ').map(parseFloat)
+                }
+            ],
             title: {
                 text: tariffs.tariffprofile[0].description
             }
@@ -105,10 +109,12 @@ angular.module('swarmApp.controllers', [])
                     pointStart: Date.UTC(2013, 1, 1, 0, 0, 0)
                 }
             },
-            series: [{
-                name: "Produced Power",
-                data: clearsky.values.split(' ').map(parseFloat)
-            }],
+            series: [
+                {
+                    name: "Produced Power",
+                    data: clearsky.values.split(' ').map(parseFloat)
+                }
+            ],
             title: {
                 text: clearsky.skycover
             }
@@ -154,9 +160,11 @@ angular.module('swarmApp.controllers', [])
                     type: 'bar'
                 }
             },
-            series: [{
-                data: [10, 15, 12, 8, 7]
-            }],
+            series: [
+                {
+                    data: [10, 15, 12, 8, 7]
+                }
+            ],
             title: {
                 text: 'Hello'
             }
@@ -164,27 +172,27 @@ angular.module('swarmApp.controllers', [])
 
     }])
 
-    .controller("LogInController", ["$scope", "$rootScope", "$location", "MyService", function($scope, $rootScope, $location, MyService) {
-        $scope.logIn = function() {
+    .controller("LogInController", ["$scope", "$rootScope", "$location", "MyService", function ($scope, $rootScope, $location, MyService) {
+        $scope.logIn = function () {
             MyService.login($scope.user.name, $scope.user.password)
                 .then(function (data) {
                     $rootScope.account = data.data;
                     //RestService.isLogged = true
                     $location.path('/home')
-            }, function (data) {
-                $location.path('/home').replace()
-            })
+                }, function (data) {
+                    $location.path('/home').replace()
+                })
             //$location.path('/home')
         }
     }])
 
-    .controller("PowerProfileController", ["$scope", "MyService", function($scope, MyService) {
-        MyService.getPowerProfile('dishmachine').then(function(data) {
+    .controller("PowerProfileController", ["$scope", "MyService", function ($scope, MyService) {
+        MyService.getPowerProfile('dishmachine').then(function (data) {
             $scope.profile = data.data
             var phases = data.data.energyphases.energyphase
             var totalDuration = 0
             var seriesData = []
-            for(var i = 0; i < phases.length; ++i) {
+            for (var i = 0; i < phases.length; ++i) {
                 var item = phases[i]
                 var peakpower = parseFloat(item['@peakpower'])
                 var meanpower = parseFloat(item['@meanpower'])
@@ -193,8 +201,8 @@ angular.module('swarmApp.controllers', [])
 
                 seriesData.push([totalDuration, meanpower], [totalDuration + duration , 0])
                 //maxdelay = maxdelay < 100 ? maxdelay : 100 + Math.log(maxdelay -99)
-                totalDuration += duration  + 4
-           }
+                totalDuration += duration + 4
+            }
 
             $scope.chart = {
                 options: {
@@ -224,10 +232,12 @@ angular.module('swarmApp.controllers', [])
                         }
                     }
                 },
-                series: [{
-                    data: seriesData,
-                    name: 'Phases and their respective Max delays'
-                }],
+                series: [
+                    {
+                        data: seriesData,
+                        name: 'Phases and their respective Max delays'
+                    }
+                ],
                 title: {
                     text: 'Dish Machine Power Profile'
                 }
@@ -254,17 +264,19 @@ angular.module('swarmApp.controllers', [])
                             enabled: false
                         }
                         //pointPadding: 0,
-                       // groupPadding: 0,
-                       // borderWidth: 0
+                        // groupPadding: 0,
+                        // borderWidth: 0
                         //pointInterval: 3600000, // 1 hour
                         //pointStart: Date.UTC(2013, 0, 1, 0, 0, 0)
                     }
                 },
 
-                series: [{
-                    data: seriesData,
-                    name: 'Phases and their respective Max delays'
-                }],
+                series: [
+                    {
+                        data: seriesData,
+                        name: 'Phases and their respective Max delays'
+                    }
+                ],
                 title: {
                     text: 'Dish Machine Power Profile'
                 }
@@ -273,11 +285,62 @@ angular.module('swarmApp.controllers', [])
     }])
 
 
-    .controller("SignUpController", ["$scope", "UserService", function($scope, UserService) {
-        $scope.signUp = function() {
+    .controller("SimulationSetupController", ["$scope", function ($scope) {
+        var master = {
+            name: 'John Smith',
+            address: {
+                line1: '123 Main St.',
+                city: 'Anytown',
+                state: 'AA',
+                zip: '12345'
+            },
+            contacts: [
+                {type: 'phone', value: '1(234) 555-1212'}
+            ]
+        };
+
+        $scope.state = /^\w\w$/;
+        $scope.zip = /^\d\d\d\d\d$/;
+
+        $scope.cancel = function () {
+            $scope.form = angular.copy(master);
+        };
+
+        $scope.save = function () {
+            master = $scope.form;
+            $scope.cancel();
+        };
+
+        $scope.addContact = function () {
+            $scope.form.contacts.push({type: '', value: ''});
+        };
+
+        $scope.removeContact = function (contact) {
+            var contacts = $scope.form.contacts;
+            for (var i = 0, ii = contacts.length; i < ii; i++) {
+                if (contact === contacts[i]) {
+                    contacts.splice(i, 1);
+                }
+            }
+        };
+
+        $scope.isCancelDisabled = function () {
+            return angular.equals(master, $scope.form);
+        };
+
+        $scope.isSaveDisabled = function () {
+            return $scope.myForm.$invalid || angular.equals(master, $scope.form);
+        };
+
+        $scope.cancel();
+    }])
+
+
+    .controller("SignUpController", ["$scope", "UserService", function ($scope, UserService) {
+        $scope.signUp = function () {
             UserService.signUp($scope.email, $scope.password, $scope.username)
         }
-  }]);
+    }]);
 
 
 var tariffs = {
