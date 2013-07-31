@@ -9,7 +9,6 @@
                 <legend>Fill Setup Parameters</legend>
 
                 <label class="control-label" for="username">Enter your Username</label>
-
                 <div class="control-group"
                      ng-class="{error: loginForm.username.$invalid}">
                     <div class="controls">
@@ -39,15 +38,52 @@
                       ng-show="loginForm.password.$error.required">Required</span>
                     </div>
                 </div>
+
                 <div class="control-group">
-                    <div class="controls controls-row">
+                    <div class="controls">
                         <button type="submit" class="btn" value="Login" title="Login"
                                 ng-disabled="!loginForm.$valid">
                             <span>Login</span>
                         </button>
                     </div>
                 </div>
+
+                <label class="control-label" >Select Options</label>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="checkbox inline">
+                           <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                        </label>
+                    </div>
+                </div>
+
+                <label class="control-label" >Select Options</label>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="radio">
+                            <input type="radio" checked name="optionsRadios" id="inlineCheckbox1" value="option1"> 1
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="optionsRadios" id="inlineCheckbox2" value="option2"> 2
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="optionsRadios" id="inlineCheckbox3" value="option3"> 3
+                        </label>
+                    </div>
+                </div>
+
+
             </form>
+
+
+
+
 
             <form name="loginform" novalidate ng-submit="login.submit()">
                 <fieldset>
