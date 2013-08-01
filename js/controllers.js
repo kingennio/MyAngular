@@ -4,6 +4,13 @@ var cleanProperties = function (jsonObject) {
 
 }
 
+var ApplianceProfile = new function (profileId) {
+    this.profileId = profileId
+    this.startAfter = 0
+    this.endBefore = 1440
+}
+
+
 var clearsky = {
     "@label": "TenMinutes",
     "@href": "http://156.54.69.117:8080/swarm/base/solars/clearsky",
@@ -285,54 +292,46 @@ angular.module('swarmApp.controllers', [])
     }])
 
 
-    .controller("SimulationSetupController", ["$scope", function ($scope) {
-        var master = {
-            name: 'John Smith',
-            address: {
-                line1: '123 Main St.',
-                city: 'Anytown',
-                state: 'AA',
-                zip: '12345'
-            },
-            contacts: [
-                {type: 'phone', value: '1(234) 555-1212'}
-            ]
-        };
+    .controller("SimulationSetupController", ["$scope", "MyService", function ($scope, MyService) {
+        var profileIds = ['uno', 'due', 'tre', '4to']
+        var applianceProfiles = []
 
-        $scope.state = /^\w\w$/;
-        $scope.zip = /^\d\d\d\d\d$/;
+        for (var i = 0; i < profileIds.length; ++i) {
+            applianceProfiles.push({
+                profileId: profileIds[i],
+                myNumbers: 1,
+                appliances: [
+                    {
+                        name: undefined,
+                        startTime: 0,
+                        endTime: 1440
+                    }
+                ],
 
-        $scope.cancel = function () {
-            $scope.form = angular.copy(master);
-        };
-
-        $scope.save = function () {
-            master = $scope.form;
-            $scope.cancel();
-        };
-
-        $scope.addContact = function () {
-            $scope.form.contacts.push({type: '', value: ''});
-        };
-
-        $scope.removeContact = function (contact) {
-            var contacts = $scope.form.contacts;
-            for (var i = 0, ii = contacts.length; i < ii; i++) {
-                if (contact === contacts[i]) {
-                    contacts.splice(i, 1);
+                change: function (value) {
+                    console.log(value)
+                    console.log(this.appliances.length)
+                    if (value > this.appliances.length) {
+                        this.appliances.push(
+                            {
+                                name: undefined,
+                                startTime: 0,
+                                endTime: 1440
+                            }
+                        )
+                    } else {
+                        this.appliances.pop()
+                    }
                 }
-            }
-        };
+            })
+        }
 
-        $scope.isCancelDisabled = function () {
-            return angular.equals(master, $scope.form);
-        };
-
-        $scope.isSaveDisabled = function () {
-            return $scope.myForm.$invalid || angular.equals(master, $scope.form);
-        };
-
-        $scope.cancel();
+        $scope.applianceProfiles = applianceProfiles
+        /*
+         MyService.getAllPowerProfiles().then(function (data) {
+         $scope.allProfiles = data.data.powerprofile
+         })
+         */
     }])
 
 
