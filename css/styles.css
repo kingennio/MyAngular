@@ -4,38 +4,6 @@ body {
     padding-bottom: 40px;
 }
 
-/** Login Page **/
-#login {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-#login .form-signin {
-    max-width: 300px;
-    padding: 19px 29px 29px;
-    margin: 0 auto 20px;
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-}
-
-#login .form-signin .form-signin-heading,
-#login .form-signin .checkbox {
-    margin-bottom: 10px;
-}
-
-#login .form-signin input[type="text"],
-#login .form-signin input[type="password"] {
-    font-size: 16px;
-    height: auto;
-    margin-bottom: 15px;
-    padding: 7px 9px;
-}
 
 /** 2 level sub menu **/
 .dropdown-menu-with-subs .sub-menu {
@@ -211,3 +179,11 @@ body {
 .the-icons i:hover {
     background-color: rgba(255, 0, 0, .25);
 }
+
+
+.ng-pristine { border:1px solid Gold; }
+.ng-dirty.ng-valid { border:1px solid Green; }
+.ng-dirty.ng-invalid { border:1px solid Red; }
+.ng-dirty.ng-valid ~ span.ok { color:green; display:inline; }
+.ng-dirty.ng-invalid ~ span.ko { color:red; display:inline; }
+

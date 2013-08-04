@@ -5,8 +5,9 @@
 angular.module('swarmApp', ['swarmApp.filters', 'swarmApp.services', 'swarmApp.directives', 'swarmApp.controllers', 'highcharts-ng', 'ngMockE2E'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when("/home", {controller: "HomeController", templateUrl: "partials/setup-simulation.html"})
+            .when("/home", {controller: "HomeController", templateUrl: "partials/solar.html"})
             .when("/login", {controller: "LogInController", templateUrl: "partials/login.html"})
+            .when("/setup-simulation", {controller: "SimulationSetupController", templateUrl: "partials/setup-simulation.html"})
             .when("/profiles/:profileId", {
                 controller: "PowerProfileController",
                 templateUrl: "partials/profile.html"

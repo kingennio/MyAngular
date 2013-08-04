@@ -296,6 +296,8 @@ angular.module('swarmApp.controllers', [])
         var profileIds = ['uno', 'due', 'tre', '4to']
         var applianceProfiles = []
 
+        $scope.timeFormat = /^([01]\d|2[0-3]):?([0-5]\d)$/
+
         for (var i = 0; i < profileIds.length; ++i) {
             applianceProfiles.push({
                 profileId: profileIds[i],
@@ -303,15 +305,17 @@ angular.module('swarmApp.controllers', [])
                 appliances: [
                     {
                         name: undefined,
-                        startTime: 0,
-                        endTime: 1440
+                        startTime: '00:00',
+                        endTime: '23:59',
+                        after: 0,
+                        before: 1440
                     }
                 ],
 
-                change: function (value) {
-                    console.log(value)
+                change: function () {
+                    console.log(this.myNumbers)
                     console.log(this.appliances.length)
-                    if (value > this.appliances.length) {
+                    if (this.myNumbers > this.appliances.length) {
                         this.appliances.push(
                             {
                                 name: undefined,

@@ -5,7 +5,7 @@
     <div class="row-fluid">
         <div class="span12">
 
-            <form name="loginForm" novalidate ng-controller="SimulationSetupController" ng-submit="login()">
+            <form name="loginForm" novalidate ng-submit="login()">
                 <fieldset>
                     <legend>Fill Setup Parameters</legend>
 
@@ -86,28 +86,62 @@
                     </div>
 
                     <div class="well well-small">
-                        <label class="control-label">Appliances Setup</label>
+                        <h3 class="control-label">Appliances Setup</h3>
 
                         <div class="control-group">
                             <div ng-repeat="profile in applianceProfiles">
-                                <div class="controls">
+                                <div class="controls well well-small">
                                     <input name="profile" type="number" ng-required="true" min="0" max="10"
-                                           ng-model="profile.myNumbers" ng-change="profile.change(profile.myNumbers)"
+                                           ng-model="profile.myNumbers" ng-change="profile.change()"
                                            class="input-mini"/>
-                                    <span class="help-inline"> {{ profile.profileId }} </span>
+                                    <h4 class="help-inline">Profile {{ profile.profileId }} </h4>
 
                                     <div ng-repeat="appliance in profile.appliances">
-                                        <input name="applianceName" type="text" placeholder="Appliance Name" required
-                                               ng-model="appliance.name"/>
-                                    </div>
+
+                                        <div class="control-group inline">
+                                            <h5 class="control-label">Appliance Instance Setup</h5>
+                                            <div class="controls">
+                                                <input class="input xinput-large" name="applianceName" type="search" placeholder="Appliance Name" required
+                                                       ng-model="appliance.name">
+
+                                                <input class="input span2" name="startTime" type="time" ng-required="true"
+                                                       ng-model="appliance.startTime" ng-pattern="timeFormat">
+                                                <span class="help-inline">Start After</span>
+
+                                                <input class="input span2" name="endTime" type="time" ng-required="true"
+                                                       ng-model="appliance.endTime" ng-pattern="timeFormat">
+                                                <span class="help-inline">End Before</span>
+                                            </div>
+                                        <div class="control-group inline">
+                                            <div class="controls">
+                                                <h5 class="control-label">Start After {{ appliance.after * 60000 | date:'HH:mm' }}</h5>
+                                                <input class="input-block-level" type="range" name="after" min="0" max="1440" ng-model="appliance.after">
+                                                <h5 class="control-label">End Before {{ appliance.endTime }}</h5>
+                                                <input class="input-block-level" type="range" name="before" min="0" max="1440" value="1440">
+
+                                        <span class="help-block" ng-show="loginForm.startTime.$error.pattern && loginForm">
+                                            <h5 class="text-error">Incorrect Time Format, must be </mark>HH:MM</mark></h5>
+                                        </span>
+
+                                        <pre>appliance={{appliance}}</pre>
+
+                                        </div>
 
                                 </div>
                             </div>
+                           </div>
                         </div>
                     </div>
 
                 </fieldset>
+                Debug View:
+                <pre>form={{loginForm}}</pre>
             </form>
+
+
+
+
+
 
 
             <form name="loginform" novalidate ng-submit="login.submit()">
