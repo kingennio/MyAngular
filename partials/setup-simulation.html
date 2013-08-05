@@ -100,11 +100,14 @@
 
                                         <div class="control-group inline">
                                             <h5 class="control-label">Appliance Instance Setup</h5>
+
                                             <div class="controls">
-                                                <input class="input xinput-large" name="applianceName" type="search" placeholder="Appliance Name" required
+                                                <input class="input xinput-large" name="applianceName" type="search"
+                                                       placeholder="Appliance Name" required
                                                        ng-model="appliance.name">
 
-                                                <input class="input span2" name="startTime" type="time" ng-required="true"
+                                                <input class="input span2" name="startTime" type="time"
+                                                       ng-required="true"
                                                        ng-model="appliance.startTime" ng-pattern="timeFormat">
                                                 <span class="help-inline">Start After</span>
 
@@ -112,36 +115,36 @@
                                                        ng-model="appliance.endTime" ng-pattern="timeFormat">
                                                 <span class="help-inline">End Before</span>
                                             </div>
-                                        <div class="control-group inline">
-                                            <div class="controls">
-                                                <h5 class="control-label">Start After {{ appliance.after * 60000 | date:'HH:mm' }}</h5>
-                                                <input class="input-block-level" type="range" name="after" min="0" max="1440" ng-model="appliance.after">
-                                                <h5 class="control-label">End Before {{ appliance.endTime }}</h5>
-                                                <input class="input-block-level" type="range" name="before" min="0" max="1440" value="1440">
+                                            <div class="control-group inline">
 
-                                        <span class="help-block" ng-show="loginForm.startTime.$error.pattern && loginForm">
-                                            <h5 class="text-error">Incorrect Time Format, must be </mark>HH:MM</mark></h5>
+                                                <h5 class="control-label">Start After {{ appliance.after * 60000 |
+                                                    date:'HH:mm' }}</h5>
+                                                <input class="input-block-level" type="range" name="after" min="0"
+                                                       max="1440" ng-model="appliance.after">
+                                                <h5 class="control-label">End Before {{ appliance.endTime }}</h5>
+                                                <input class="input-block-level" type="range" name="before" min="0"
+                                                       max="1440" value="1440">
+
+                                        <span class="help-block"
+                                              ng-show="loginForm.startTime.$error.pattern && loginForm">
+                                            <h5 class="text-error">Incorrect Time Format, must be </mark>
+                                                HH:MM</mark></h5>
                                         </span>
 
-                                        <pre>appliance={{appliance}}</pre>
 
+                                                <pre>appliance={{appliance}}</pre>
+
+
+                                            </div>
                                         </div>
-
+                                    </div>
                                 </div>
                             </div>
-                           </div>
-                        </div>
-                    </div>
 
                 </fieldset>
                 Debug View:
                 <pre>form={{loginForm}}</pre>
             </form>
-
-
-
-
-
 
 
             <form name="loginform" novalidate ng-submit="login.submit()">

@@ -1,11 +1,12 @@
 <div class="container" ng-cloack>
-<h1>Power Profile Prototype {{profile['@id']}}</h1>
+    <h1>Power Profile Prototype {{profile['@id']}}</h1>
 
-<p><a ng-href="{{profile['@href']}}">URI Resource</a> </p>
+    <p><a ng-href="{{profile['@href']}}">URI Resource</a></p>
 
-    <highchart id="profile1" series="chart.series" options="chart.options" title="chart.title" style="width:90%; height:70%;"></highchart>
+    <highchart id="profile1" series="chart.series" options="chart.options" title="chart.title"
+               style="width:90%; height:50%;"></highchart>
 
-    <chart value="profileChart" type="area" width="1000" height="800"/>
+    <chart value="profileChart" type="area" width="1000" height="500"/>
 
     <ul class="specs">
         <span>Specifications</span>
@@ -16,43 +17,43 @@
             <dd>{{profile.totalenergy}}</dd>
             <dt>Energy Phases</dt>
             <dd id="phaseTable">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Duration</th>
-                            <th>Max Delay</th>
-                            <th>Peak Power</th>
-                            <th>Mean Power</th>
-                            <th>Biased Peak Power</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="phase in profile.energyphases.energyphase">
-                            <td>
-                                {{phase['@id']}}
-                            </td>
-                            <td>
-                                {{phase['@duration']}}
-                            </td>
-                            <td>
-                                {{phase['@maxdelay']}}
-                            </td>
-                            <td>
-                                {{phase['@peakpower']}}
-                            </td>
-                            <td>
-                                {{phase['@meanpower']}}
-                            </td>
-                            <td>
-                                {{phase['@biasedpower']}}
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Duration</th>
+                        <th>Max Delay</th>
+                        <th>Peak Power</th>
+                        <th>Mean Power</th>
+                        <th>Biased Peak Power</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="phase in profile.energyphases.energyphase">
+                        <td>
+                            {{phase['@id']}}
+                        </td>
+                        <td>
+                            {{phase['@duration']}}
+                        </td>
+                        <td>
+                            {{phase['@maxdelay']}}
+                        </td>
+                        <td>
+                            {{phase['@peakpower']}}
+                        </td>
+                        <td>
+                            {{phase['@meanpower']}}
+                        </td>
+                        <td>
+                            {{phase['@biasedpower']}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </dd>
         </dl>
-</ul>
+    </ul>
 
 
 </div>
