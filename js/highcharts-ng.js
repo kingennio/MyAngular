@@ -72,9 +72,11 @@ angular.module('highcharts-ng', [])
 
 
                 }, true);
+
                 scope.$watch("title", function (newTitle) {
                     chart.setTitle(newTitle, true);
                 }, true);
+
                 scope.$watch("options", function (newOptions, oldOptions, scope) {
                     //do nothing when called on registration
                     if (newOptions === oldOptions) return;
