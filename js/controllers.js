@@ -34,14 +34,30 @@ angular.module('swarmApp.controllers', [])
 
 
         $scope.solarChart = {
-            chart: {
-                type: 'spline'
+            options: {
+                chart: {
+                    type: 'spline',
+                    zoomType: 'x'
+                },
+                plotOptions: {
+                    spline: {
+                        lineWidth: 2,
+                        enableMouseTracking: false,
+                        marker: {
+                            enabled: false
+                        },
+                        pointInterval: 600000, // ten minutes
+                        pointStart: Date.UTC(2013, 12, 1, 0, 0, 0)
+                    }
+                }
+
             },
             xAxis: {
-                type: 'datetime'
+                type: 'datetime',
+                currentMin: Date.UTC(2013, 12, 1, 0, 0, 0),
+                currentMax: Date.UTC(2013, 12, 3, 0, 0, 0)
             },
-            yAxis: {
-            },
+
             plotOptions: {
                 spline: {
                     lineWidth: 2,
@@ -53,7 +69,7 @@ angular.module('swarmApp.controllers', [])
                     pointStart: Date.UTC(2013, 1, 1, 0, 0, 0)
                 }
             },
-
+            loading: false,
             series: [
                 {
                     data: partlyclouded.values.split(' ').map(parseFloat)
@@ -65,28 +81,32 @@ angular.module('swarmApp.controllers', [])
         }
 
         $scope.tariffChart = {
-            chart: {
-                type: 'area'
-            },
-            xAxis: {
-                type: 'datetime'
-            },
-            yAxis: {
-            },
-            plotOptions: {
-                area: {
-                    step: 'left',
-                    lineWidth: 3,
-                    enableMouseTracking: true,
-                    marker: {
-                        enabled: false
-                    },
-                    //pointPadding: 0,
-                    //groupPadding: 0,
-                    //borderWidth: 0,
-                    pointInterval: 3600000, // 1 hour
-                    pointStart: Date.UTC(2013, 0, 1, 0, 0, 0)
+            options: {
+                chart: {
+                    type: 'area',
+                    zoomType: 'x'
+                },
+                plotOptions: {
+                    area: {
+                        step: 'left',
+                        lineWidth: 3,
+                        enableMouseTracking: true,
+                        marker: {
+                            enabled: false
+                        },
+                        //pointPadding: 0,
+                        //groupPadding: 0,
+                        //borderWidth: 0,
+                        pointInterval: 3600000, // 1 hour
+                        pointStart: Date.UTC(2013, 12, 1, 0, 0, 0)
+                    }
                 }
+            },
+            loading: false,
+            xAxis: {
+                type: 'datetime',
+                currentMin: Date.UTC(2013, 12, 1, 0, 0, 0),
+                currentMax: Date.UTC(2013, 12, 3, 0, 0, 0)
             },
 
             series: [
@@ -297,6 +317,11 @@ angular.module('swarmApp.controllers', [])
         var applianceProfiles = []
 
         $scope.timeFormat = /^([01]\d|2[0-3]):?([0-5]\d)$/
+
+        $scope.session = {
+            username: undefined,
+            password: undefined
+        }
 
         for (var i = 0; i < profileIds.length; ++i) {
             applianceProfiles.push({

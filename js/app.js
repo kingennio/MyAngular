@@ -8,6 +8,7 @@ angular.module('swarmApp', ['swarmApp.filters', 'swarmApp.services', 'swarmApp.d
             .when("/home", {controller: "HomeController", templateUrl: "partials/solar.html"})
             .when("/login", {controller: "LogInController", templateUrl: "partials/login.html"})
             .when("/setup-simulation", {controller: "SimulationSetupController", templateUrl: "partials/setup-simulation.html"})
+            .when("/setup-simulation3", {controller: "SimulationSetupController", templateUrl: "partials/setup-simulation3.html"})
             .when("/profiles/:profileId", {
                 controller: "PowerProfileController",
                 templateUrl: "partials/profile.html"

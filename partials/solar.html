@@ -1,9 +1,9 @@
-<div class="container-fluid" ng-cloak>
+<div class="container" ng-cloak>
 
     <h1>Solar Power solar {{ solar.skycover }}</h1>
 
-    <div class="row-fluid">
-        <div class="span12">
+    <div class="row">
+        <div class="col col-sm-12">
             <p><a ng-href="{{solar['@href']}}">URI Resource</a></p>
 
             <ul class="specs">
@@ -22,11 +22,13 @@
 
             </ul>
 
-            <highchart id="solar1" series="solarChart.series" options="solarChart" title="solarChart.title"
-                       style="width:70%; height:50%;"></highchart>
+            <highchart id="solar1" config="solarChart" class="col col-sm-12" style="height:600px">
 
-            <highchart id="tariff1" series="tariffChart.series" options="tariffChart" title="tariffChart.title"
-                       style="width:70%; height:50%;"></highchart>
+            </highchart>
+
+            <highchart id="tariff1" config="tariffChart" class="col col-sm-12" style="height:600px">
+
+            </highchart>
             <!---
             <chart value="solarChart2" type="areaspline" height="600"/>
             -->

@@ -11,15 +11,13 @@
 
 
     <link rel="stylesheet" href="css/bootstrap3.css" media="screen">
+    <link rel="stylesheet" href="css/normalize.css" media="screen">
     <link rel="stylesheet" href="css/bootstrap-glyphicons.css" media="screen">
 
 
     <style type="text/css">
-        .navbar-fixed-top {
-            margin-bottom:20px;
-        }
-        footer {
-            padding:10px;
+        body {
+            padding-top: 60px;
         }
     </style>
 
@@ -29,10 +27,10 @@
     <![endif]-->
 </head>
 
-<body class="ng-cloak" ng-controller="HomeController">
+<body ng-controller="HomeController" ng-cloak>
 
 <div id="top-nav" class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+    <div class="container">
         <div class="container">
             <!--
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
@@ -41,24 +39,23 @@
                 <span class="glyphicon glyphicon-bar"></span>
             </button>
             -->
-            <a class="navbar-brand" href="#">Swarmy App</a>
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-dashboard icon-large"></span> Swarmy
+                App</a>
             <!--
             <div class="nav-collapse collapse">
             -->
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i><span class="hidden-sm"> Home</span></a>
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-home">  Home</span></a>
                 </li>
-                <li><a href="#about"><i class="glyphicon glyphicon-info-sign"></i><span class="hidden-sm"> About</span></a>
+                <li><a href="#about"><span class="glyphicon glyphicon-info-sign">  About</span></a>
                 </li>
+            </ul>
 
-            </ul>
-            <ul class="nav navbar-nav pull-right">
-                <form class="form-inline">
-                    <input class="col-lg-2" type="text" placeholder="Email">
-                    <input class="col-lg-2" type="password" placeholder="Password">
-                    <button type="submit" class="btn btn-default">Sign in</button>
-                </form>
-            </ul>
+            <form class="navbar-form pull-right">
+                <input class="form-control" style="width: 200px;" type="text" placeholder="Email">
+                <input class="form-control" style="width: 200px;" type="password" placeholder="Password">
+                <button type="submit" class="btn btn-default">Sign in</button>
+            </form>
             <!--
             </div>
             <!--/.nav-collapse -->
@@ -70,35 +67,41 @@
 <div class="container">
     <div class="row">
         <!-- left menu starts  -->
-        <div class="col-lg-2" id="sidebar">
+        <div id="sidebar" class="col col-sm-2">
             <!--<div class="well well-small nav-collapse sidebar-nav">
                 <ul class="nav nav-tabs nav-stacked main-menu"> -->
-            <ul class="nav nav-tabs nav-stacked">
-                <li class="nav-header hidden-md">Main</li>
-                <li><a href="#home"><i class="glyphicon glyphicon-home"></i><span class="hidden-md"> Solar and Tariff</span></a></li>
-                <li><a href="#profiles/dishmachine"><i class="glyphicon glyphicon-eye-open"></i><span class="hidden-md"> Appliance Profile</span></a>
+            <ul class="nav nav-stacked">
+                <li>
+                    <a href="#home"><span class="glyphicon glyphicon-home">  Solar and Tariff</span>
+                        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                    </a>
                 </li>
-                <li><a href="#setup-simulation"><i class="glyphicon glyphicon-edit"></i><span class="hidden-md"> Simulation Setup</span></a></li>
-                <li><a href="chart.html"><i class="glyphicon glyphicon-list-alt"></i><span class="hidden-md"> Charts</span></a>
+                <li><a href="#profiles/dishmachine"><span
+                        class="glyphicon glyphicon-eye-open">  Appliance Profile</span></a>
                 </li>
-                <li><a href="typography.html"><i class="glyphicon glyphicon-font"></i><span
-                        class="hidden-md"> Typography</span></a></li>
-                <li><a href="gallery.html"><i class="glyphicon glyphicon-picture"></i><span class="hidden-md"> Gallery</span></a>
+                <li><a href="#setup-simulation3"><span class="glyphicon glyphicon-edit">  Simulation Setup</span></a>
                 </li>
-                <li><a href="table.html"><i class="glyphicon glyphicon-align-justify"></i><span
-                        class="hidden-md"> Tables</span></a></li>
-                <li><a href="calendar.html"><i class="glyphicon glyphicon-calendar"></i><span
-                        class="hidden-md"> Calendar</span></a></li>
-                <li><a href="grid.html"><i class="glyphicon glyphicon-th"></i><span class="hidden-md"> Grid</span></a></li>
-                <li><a href="file-manager.html"><i class="glyphicon glyphicon-folder-open"></i><span class="hidden-md"> File Manager</span></a>
+                <li><a href="chart.html"><span class="glyphicon glyphicon-list-alt">  Charts</span></a>
                 </li>
-                <li><a href="tour.html"><i class="glyphicon glyphicon-globe"></i><span class="hidden-md"> Tour</span></a></li>
-                <li><a href="icon.html"><i class="glyphicon glyphicon-star"></i><span class="hidden-md"> Icons</span></a></li>
-                <li><a href="error.html"><i class="glyphicon glyphicon-ban-circle"></i><span
-                        class="hidden-md"> Error Page</span></a></li>
-                <li><a href="login.html"><i class="glyphicon glyphicon-lock"></i><span class="hidden-md"> Login Page</span></a>
+                <li><a href="typography.html"><span class="glyphicon glyphicon-font">  Typography</span></a></li>
+                <li><a href="gallery.html"><span class="glyphicon glyphicon-picture">  Gallery</span></a>
                 </li>
+                <li><a href="table.html"><span class="glyphicon glyphicon-align-justify">  Tables</span></a></li>
+                <li><a href="calendar.html"><span class="glyphicon glyphicon-calendar">  Calendar</span></a></li>
+                <li><a href="grid.html"><span class="glyphicon glyphicon-th">  Grid</span></a></li>
             </ul>
+            <div class="list-group">
+                <a href="#home" class="list-group-item"><span class="glyphicon glyphicon-home">  Solar and Tariff</span></a>
+                <a href="#profiles/dishmachine" class="list-group-item"><span class="glyphicon glyphicon-eye-open">  Appliance Profile</span></a>
+                <a href="#setup-simulation" class="list-group-item"><span class="glyphicon glyphicon-edit">  Simulation Setup</span></a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt">  Charts</span></a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-font">  Typography</span></a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-picture">  Gallery</span></a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-align-justify">  Tables</span></a>
+                <a href="calendar.html" class="list-group-item"><span
+                        class="glyphicon glyphicon-calendar">  Calendar</span></a>
+                <a href="grid.html" class="list-group-item"><span class="glyphicon glyphicon-th">  Grid</span></a>
+            </div>
         </div>
         <!--/.well -->
 
@@ -106,7 +109,7 @@
         <!-- left menu ends -->
 
         <!-- content starts -->
-        <div class="col-lg-10" id="content" ng-view></div>
+        <div class="col-12 col-sm-10" id="content" ng-view></div>
 
     </div>
     <!--/fluid-row-->
@@ -120,12 +123,14 @@
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 -->
+
+<script src="lib/jquery-2.0.3.min.js"></script>
+<script src="lib/highcharts.js"></script>
+
 <script src="lib/angular.js"></script>
 <script src="lib/angular-resource.js"></script>
 <script src="lib/angular-mocks.js"></script>
-<script src="lib/ui-bootstrap-tpls-0.4.0.js"></script>
-<script src="lib/jquery-2.0.3.min.js"></script>
-<script src="lib/highcharts.js"></script>
+
 
 <script src="js/app.js"></script>
 <script src="js/services.js"></script>
