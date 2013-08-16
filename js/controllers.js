@@ -30,6 +30,13 @@ var partlyclouded = {"@label": "TenMinutes", "@href": "http://156.54.69.117:8080
 angular.module('swarmApp.controllers', [])
 
     .controller("HomeController", ["$scope", "$rootScope", function ($scope, $rootScope) {
+        $scope.hideNavbar = false
+
+        $scope.toggleNavbar = function () {
+            $scope.hideNavbar = !$scope.hideNavbar
+        }
+
+
         $scope.account = $rootScope.account
 
 

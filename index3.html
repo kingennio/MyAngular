@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="swarmApp">
 <head>
+    <title>Swarmy SPA Client</title>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
           content="Swarmy App, a dashboard App built with AngularJS, Twitter Bootstrap, and highcharts.">
     <meta name="author" content="Ennio Grasso">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Swarmy SPA Client</title>
 
-
-    <link rel="stylesheet" href="css/bootstrap3.css" media="screen">
-    <link rel="stylesheet" href="css/normalize.css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap3rc2.css" media="screen">
     <link rel="stylesheet" href="css/bootstrap-glyphicons.css" media="screen">
 
 
     <style type="text/css">
         body {
-            padding-top: 60px;
+            padding-top: 100px;
         }
     </style>
 
@@ -30,53 +29,59 @@
 <body ng-controller="HomeController" ng-cloak>
 
 <div id="top-nav" class="navbar navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="container">
-            <!--
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="glyphicon glyphicon-bar"></span>
-                <span class="glyphicon glyphicon-bar"></span>
-                <span class="glyphicon glyphicon-bar"></span>
-            </button>
-            -->
-            <a class="navbar-brand" href="#">
-                <span class="glyphicon glyphicon-dashboard icon-large"></span> Swarmy App
-            </a>
-
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#"><span class="glyphicon glyphicon-home">  Home</span></a>
-                </li>
-                <li><a href="#about"><span class="glyphicon glyphicon-info-sign">  About</span></a>
-                </li>
-            </ul>
-
-            <form class="navbar-form pull-right">
-                <input class="form-control" style="width: 200px;" type="email" placeholder="Email">
-                <input class="form-control" style="width: 200px;" type="password" placeholder="Password">
-                <button type="submit" class="btn btn-default">Sign in</button>
-            </form>
-            <!--
-            </div>
-            <!--/.nav-collapse -->
-        </div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-click="toggleNavbar()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-dashboard icon-large"></span> Swarmy App</a>
     </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-collapse" ng-hide="hideNavbar">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-home">  Home</span></a>
+            </li>
+            <li><a href="#about"><span class="glyphicon glyphicon-info-sign">  About</span></a>
+            </li>
+        </ul>
+
+        <form class="navbar-form navbar-right" role="signin">
+            <div class="form-group">
+                <input type="email" class="form-control input-sm" style="width: 160pt;" placeholder="Email">
+                <input type="password" class="form-control input-sm" style="width: 160pt;" placeholder="Password">
+                <button type="submit" class="btn btn-default btn-sm"><span
+                        class="glyphicon glyphicon-user"> Sign in</span></button>
+            </div>
+        </form>
+    </div>
+    <!-- /.navbar-collapse -->
 </div>
+
 <!-- topbar ends -->
 
 <div class="container">
     <div class="row">
 
         <!-- content starts -->
-        <div class="col-12 col-sm-10 pull-right" id="content" ng-view></div>
+        <div class="col-sm-12 col-md-11 col-lg-10 pull-right" id="content" ng-view></div>
 
         <!-- left menu starts  -->
-        <div id="sidebar" class="col col-sm-2">
+        <div id="sidebar" class="col-md-1 col-lg-2">
             <!--<div class="well well-small nav-collapse sidebar-nav">
                 <ul class="nav nav-tabs nav-stacked main-menu"> -->
             <ul class="nav nav-stacked">
                 <li>
-                    <a href="#home"><span class="glyphicon glyphicon-home">  Solar and Tariff</span>
-                        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                    <a href="#home">
+                        <span class="hidden-md">
+                            <span class="glyphicon glyphicon-home">  Solar and Tariff</span>
+                            <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                        </span>
+                        <span class="visible-md">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </span>
                     </a>
                 </li>
                 <li><a href="#profiles/dishmachine"><span
@@ -94,7 +99,16 @@
                 <li><a href="grid.html"><span class="glyphicon glyphicon-th">  Grid</span></a></li>
             </ul>
             <div class="list-group">
-                <a href="#home" class="list-group-item"><span class="glyphicon glyphicon-home">  Solar and Tariff</span></a>
+                <a href="#home" class="list-group-item">
+                    <span class="hidden-md">
+                        <span class="glyphicon glyphicon-home">  Solar and Tariff</span>
+                        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                    </span>
+                        <span class="visible-md">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </span>
+                </a>
+
                 <a href="#profiles/dishmachine" class="list-group-item"><span class="glyphicon glyphicon-eye-open">  Appliance Profile</span></a>
                 <a href="#setup-simulation" class="list-group-item"><span class="glyphicon glyphicon-edit">  Simulation Setup</span></a>
                 <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt">  Charts</span></a>

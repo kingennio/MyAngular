@@ -1,36 +1,36 @@
+<div class="container">
+
+<h1>Simulation Setup</h1>
 
 
-    <h1>Simulation Setup</h1>
+<form name="loginForm" novalidate ng-submit="login()" role="form">
+
+<legend>Fill Setup Parameters</legend>
 
 
-    <form name="loginForm" novalidate ng-submit="login()">
+<div class="form-group"
+     ng-class="{ 'has-error': loginForm.username.$dirty && loginForm.username.$invalid, 'has-success': !loginForm.username.$invalid }">
+    <label for="username" class="control-label col-md-12">Enter your Username</label>
 
-            <legend>Fill Setup Parameters</legend>
+    <!--<input id="username" name="username" class="form-control focused" type="text" placeholder="Username"
+           required ng-minlength="5" ng-maxlength="20" ng-model="session.username"/>-->
+    <div class="col-sm-10 col-md-9">
+        <input id="username" name="username" class="form-control focused" type="text" placeholder="Username"
+               required ng-minlength="5" ng-maxlength="20" ng-model="session.username"/>
+    </div>
 
+    <h4 ng-show="loginForm.username.$error.required">
+        <span class="label label-warning">Required</span>
+    </h4>
 
+    <h4 ng-show="loginForm.username.$error.minlength">
+        <span class="label label-warning">Too Short</span>
+    </h4>
+    <h4 ng-show="loginForm.username.$error.maxlength">
+        <span class="label label-warning">Too Long</span>
+    </h4>
 
-                <div class="form-group"
-                     ng-class="{ 'has-error': loginForm.username.$dirty && loginForm.username.$invalid, 'has-success': !loginForm.username.$invalid }">
-                    <label for="username" class="control-label">Enter your Username</label>
-                    <!--<input id="username" name="username" class="form-control focused" type="text" placeholder="Username"
-                           required ng-minlength="5" ng-maxlength="20" ng-model="session.username"/>-->
-                    <div class="col-sm-9 col-lg-7">
-                        <input id="username" name="username" class="form-control focused" type="text" placeholder="Username"
-                               required ng-minlength="5" ng-maxlength="20" ng-model="session.username"/>
-                    </div>
-
-                    <h4 ng-show="loginForm.username.$error.required">
-                        <span class="label label-warning">Required</span>
-                    </h4>
-
-                    <h4 ng-show="loginForm.username.$error.minlength">
-                        <span class="label label-warning">Too Short</span>
-                    </h4>
-                    <h4 ng-show="loginForm.username.$error.maxlength">
-                        <span class="label label-warning">Too Long</span>
-                    </h4>
-
-                </div>
+</div>
 
                      <pre class="col-12">
     loginForm.username.$invalid         = {{ loginForm.username.$invalid  }}
@@ -39,30 +39,30 @@
     loginForm.username.$error.maxlength = {{ loginForm.username.$error.maxlength }}
                     </pre>
 
-                <div class="form-group"
-                     ng-class="{ 'has-error': loginForm.password.$dirty && loginForm.password.$invalid, 'has-success': !loginForm.password.$invalid }">
-                    <label for="password" class="control-label col-12">Enter your Password</label>
-                    <input id="password" name="password" class="form-control" type="password" placeholder="Password"
-                           required="true" ng-minlength="6" ng-maxlength="12" ng-model="session.password"/>
+<div class="form-group"
+     ng-class="{ 'has-error': loginForm.password.$dirty && loginForm.password.$invalid, 'has-success': !loginForm.password.$invalid }">
+    <label for="password" class="control-label col-12">Enter your Password</label>
+    <input id="password" name="password" class="form-control" type="password" placeholder="Password"
+           required="true" ng-minlength="6" ng-maxlength="12" ng-model="session.password"/>
 
-                    <h4 ng-show="loginForm.password.$error.required">
-                        <span class="label label-warning">Required</span>
-                    </h4>
+    <h4 ng-show="loginForm.password.$error.required">
+        <span class="label label-warning">Required</span>
+    </h4>
 
-                    <h4 ng-show="loginForm.password.$error.minlength">
-                        <span class="label label-warning">Too Short</span>
-                    </h4>
-                    <h4 ng-show="loginForm.password.$error.maxlength">
-                        <span class="label label-warning">Too Long</span>
-                    </h4>
+    <h4 ng-show="loginForm.password.$error.minlength">
+        <span class="label label-warning">Too Short</span>
+    </h4>
+    <h4 ng-show="loginForm.password.$error.maxlength">
+        <span class="label label-warning">Too Long</span>
+    </h4>
 
-                </div>
+</div>
 
-                <button type="submit" class="btn btn-default" value="Login" title="Login"
-                        ng-disabled="!loginForm.$valid">Login
-                </button>
+<button type="submit" class="btn btn-default" value="Login" title="Login"
+        ng-disabled="!loginForm.$valid">Login
+</button>
 
-                <br><br><br>
+<br><br><br>
 
 <!--
                 <div class="checkbox">
@@ -121,57 +121,71 @@
 
                 <br><br>-->
 
+
+<h2>Appliances Simulation Setup</h2>
+
+<div>
+    <div ng-repeat="profile in applianceProfiles">
+        <div class="panel panel-primary">
+
+            <div class="panel-heading row">
+                <div class="col-sm-2">
+                    <input id="profile" name="profile" type="number" class="form-control"
+                           ng-required="true" min="0" max="10" ng-model="profile.myNumbers"
+                           ng-change="profile.change()"/>
+                </div>
+
+                <h4 class="panel-title"><label for="profile">Number of instances of appliance profile:
+                    <strong><em>{{ profile.profileId }}</em></strong></label></h4>
+
             </div>
 
+            <ul class="list-group">
+                <div ng-repeat="appliance in profile.appliances">
+                    <li class="list-group-item">
 
-            <div class="col-12">
-                <h3>Appliances Setup</h3>
-
-                <div>
-                    <div ng-repeat="profile in applianceProfiles">
                         <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Appliance Instance Setup {{ 1 + $index }}</h5>
+                            </div>
+                            <br>
 
-                            <div class="panel-heading row">
-                                <div class="col-sm-2">
-                                    <input id="profile" name="profile" type="number" class="form-control"
-                                           ng-required="true" min="0" max="10" ng-model="profile.myNumbers"
-                                           ng-change="profile.change()"/>
+                            <div class="form-group">
+                                <label for="applianceName">Enter an instance name for this appliance, e.g. "{{
+                                    profile.profileId }}-machine{{ 1 + $index }}"</label>
+                                <input id="applianceName" name="applianceName" type="text" class="form-control input-lg"
+                                       placeholder="Appliance Name"
+                                       required ng-model="appliance.name">
+                            </div>
+                            <br>
+
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label for="startAfter">Start appliance after</label>
+                                    <input id="startAfter" name="startAfter" class="form-control" name="startTime"
+                                           type="time"
+                                           ng-required="true" ng-model="appliance.startTime" ng-pattern="timeFormat">
                                 </div>
-                                <h4 for="profile" class="col-sm-10">select instances of appliance profile:
-                                    <strong><em>{{ profile.profileId }}</em></strong></h4>
 
+                                <div class="col-sm-4">
+                                    <label for="endBefore">Complete appliance before</label>
+                                    <input id="endBefore" name="endBefore" class="form-control" type="time"
+                                           ng-required="true"
+                                           ng-model="appliance.endTime" ng-pattern="timeFormat">
+                                </div>
                             </div>
 
-                            <ul class="list-group">
-                                <div ng-repeat="appliance in profile.appliances">
+                            <div class="form-group">
 
-                                    <li class="list-group-item">
+                                <label for="rangeStart">Start After {{ appliance.after * 60000 | date:'HH:mm' }}</label>
+                                <input id="rangeStart" name="rangeStart" type="range" style="width: 100%;"
+                                       min="0" max="1440" ng-model="appliance.after">
 
-                                        <h4 class="list-group-item-heading">Appliance Instance Setup</h4>
 
-                                        <div class="controls">
-                                            <input class="input xinput-large" name="applianceName" type="search"
-                                                   placeholder="Appliance Name" required
-                                                   ng-model="appliance.name">
+                                <label for="rangeEnd">End Before {{ appliance.endTime }}</label>
 
-                                            <input class="input col-lg-2" name="startTime" type="time"
-                                                   ng-required="true"
-                                                   ng-model="appliance.startTime" ng-pattern="timeFormat">
-                                            <span class="help-inline">Start After</span>
-
-                                            <input class="input col-lg-2" name="endTime" type="time" ng-required="true"
-                                                   ng-model="appliance.endTime" ng-pattern="timeFormat">
-                                            <span class="help-inline">End Before</span>
-                                        </div>
-                                        <div class="control-group inline">
-
-                                            <h5 class="control-label">Start After {{ appliance.after * 60000 |
-                                                date:'HH:mm' }}</h5>
-                                            <input class="input-block-level" type="range" name="after" min="0"
-                                                   max="1440" ng-model="appliance.after">
-                                            <h5 class="control-label">End Before {{ appliance.endTime }}</h5>
-                                            <input class="input-block-level" type="range" name="before" min="0"
-                                                   max="1440" value="1440">
+                                <input id="rangeEnd" name="rangeEnd" type="range" style="width: 100%;"
+                                       min="0" max="1440" value="1440" ng-model="appliance.before">
     
                                             <span class="help-block"
                                                   ng-show="loginForm.startTime.$error.pattern && loginForm">
@@ -180,24 +194,23 @@
                                             </span>
 
 
-                                            <pre>appliance={{appliance}}</pre>
+                                <pre>appliance={{appliance}}</pre>
 
 
-                                        </div>
-                                    </li>
-                                    <br>
-                                </div>
-                            </ul>
+                            </div>
                         </div>
-                    </div>
+                    </li>
+
                 </div>
-            </div>
+            </ul>
+        </div>
+    </div>
+</div>
 
-        Debug View:
-        <pre>form={{loginForm}}</pre>
-    </form>
 
-
+Debug View:
+<pre>form={{loginForm}}</pre>
+</form>
 
 
 <form name="loginform" novalidate ng-submit="login.submit()">
@@ -239,4 +252,4 @@
 
     <button type="submit" class="btn btn-primary btn-large">Submit</button>
 </form>
-</div>
+</div></div>

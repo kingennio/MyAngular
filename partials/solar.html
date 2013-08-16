@@ -1,37 +1,36 @@
-<div class="container" ng-cloak>
+<div class="container" ng-cloak=>
 
     <h1>Solar Power solar {{ solar.skycover }}</h1>
 
-    <div class="row">
-        <div class="col col-sm-12">
-            <p><a ng-href="{{solar['@href']}}">URI Resource</a></p>
 
-            <ul class="specs">
-                <span>Specifications</span>
-                <dl class="dl-horizontal">
-                    <dt>Slot Size</dt>
-                    <dd>{{ solar.slotsize }} (seconds), i.e. {{solar['@label']}}</dd>
-                    <dt>Number of Slots</dt>
-                    <dd>{{solar.slots}}</dd>
-                    <dt>Total Duration</dt>
-                    <dd>{{ solar.totalhours }} ({{ solar.totsalseconds }})</dd>
-                    <dt>Max Peak Power</dt>
-                    <dd>{{solar.peakpower}}</dd>
-                </dl>
-
-
-            </ul>
-
-            <highchart id="solar1" config="solarChart" class="col col-sm-12" style="height:600px">
-
-            </highchart>
-
-            <highchart id="tariff1" config="tariffChart" class="col col-sm-12" style="height:600px">
-
-            </highchart>
-            <!---
-            <chart value="solarChart2" type="areaspline" height="600"/>
-            -->
+    <div class=" panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a ng-href="{{solar['@href']}}">URI Resource</a></h4>
         </div>
+
+        <span>Specifications</span>
+        <dl class="dl-horizontal">
+            <dt>Slot Size</dt>
+            <dd>{{ solar.slotsize }} (seconds), i.e. {{solar['@label']}}</dd>
+            <dt>Number of Slots</dt>
+            <dd>{{solar.slots}}</dd>
+            <dt>Total Duration</dt>
+            <dd>{{ solar.totalhours }} ({{ solar.totsalseconds }})</dd>
+            <dt>Max Peak Power</dt>
+            <dd>{{solar.peakpower}}</dd>
+        </dl>
+
+
     </div>
+    <highchart id="solar1" config="solarChart" style="height:600px">
+
+    </highchart>
+
+    <highchart id="tariff1" config="tariffChart" style="height:600px">
+
+    </highchart>
+    <!---
+    <chart value="solarChart2" type="areaspline" height="600"/>
+    -->
+
 </div>
