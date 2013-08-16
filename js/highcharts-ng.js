@@ -134,42 +134,47 @@ angular.module('highcharts-ng', [])
             },
             link: function (scope, element, attrs) {
 
-                var chart = initialiseChart(scope, element, scope.config);
+                scope.$watch("config", function (config) {
+                    if (!config) return
 
-                scope.$watch("config.series", function (newSeries, oldSeries) {
-                    //do nothing when called on registration
-                    if (newSeries === oldSeries) return;
-                    processSeries(chart, newSeries);
-                    chart.redraw();
-                }, true);
+                    var chart = initialiseChart(scope, element, config);
 
-                scope.$watch("config.title", function (newTitle) {
-                    chart.setTitle(newTitle, true);
-                }, true);
-
-                scope.$watch("config.loading", function (loading) {
-                    if (loading === false) {
-                        chart.hideLoading()
-                    } else {
-                        chart.showLoading()
-                    }
-                }, true);
-
-                scope.$watch("config.xAxis", function (newAxes, oldAxes) {
-                    if (newAxes === oldAxes) return;
-                    if (newAxes) {
-                        chart.xAxis[0].update(newAxes);
-                        updateZoom(chart.xAxis[0], angular.copy(newAxes));
+                    scope.$watch("config.series", function (newSeries, oldSeries) {
+                        //do nothing when called on registration
+                        if (newSeries === oldSeries) return;
+                        processSeries(chart, newSeries);
                         chart.redraw();
-                    }
-                }, true);
-                scope.$watch("config.options", function (newOptions, oldOptions, scope) {
-                    //do nothing when called on registration
-                    if (newOptions === oldOptions) return;
-                    chart.destroy();
-                    chart = initialiseChart(scope, element, scope.config);
+                    }, true);
 
-                }, true);
+                    scope.$watch("config.title", function (newTitle) {
+                        //chart.setTitle(newTitle, true);
+                    }, true);
+
+                    scope.$watch("config.loading", function (loading) {
+                        if (loading === false) {
+                            chart.hideLoading()
+                        } else {
+                            chart.showLoading()
+                        }
+                    }, true);
+
+                    scope.$watch("config.xAxis", function (newAxes, oldAxes) {
+                        if (newAxes === oldAxes) return;
+                        if (newAxes) {
+                            chart.xAxis[0].update(newAxes);
+                            updateZoom(chart.xAxis[0], angular.copy(newAxes));
+                            chart.redraw();
+                        }
+                    }, true);
+
+                    scope.$watch("config.options", function (newOptions, oldOptions, scope) {
+                        //do nothing when called on registration
+                        if (newOptions === oldOptions) return;
+                        chart.destroy();
+                        chart = initialiseChart(scope, element, scope.config);
+
+                    }, true);
+                })
             }
         }
     });

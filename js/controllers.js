@@ -220,7 +220,7 @@ angular.module('swarmApp.controllers', [])
         }
     }])
 
-    .controller("PowerProfileController", ["$scope", "MyService", function ($scope, MyService) {
+    .controller("PowerProfileController", ["$rootScope", "$scope", "MyService", function ($rootScope, $scope, MyService) {
         MyService.getPowerProfile('dishmachine').then(function (data) {
             $scope.profile = data.data
             var phases = data.data.energyphases.energyphase
@@ -238,17 +238,10 @@ angular.module('swarmApp.controllers', [])
                 totalDuration += duration + 4
             }
 
-            $scope.chart = {
+            $scope.profileChart = {
                 options: {
                     chart: {
                         type: 'area'
-                    },
-                    xAxis: {
-                        type: 'linear',
-                        minPadding: 0.1
-                    },
-                    yAxis: {
-                        //type: 'logarithmic'
                     },
                     plotOptions: {
                         area: {
@@ -264,8 +257,13 @@ angular.module('swarmApp.controllers', [])
                             //pointInterval: 3600000, // 1 hour
                             //pointStart: Date.UTC(2013, 0, 1, 0, 0, 0)
                         }
+                    },
+                    xAxis: {
+                        type: 'linear',
+                        minPadding: 0.1
                     }
                 },
+                loading: false,
                 series: [
                     {
                         data: seriesData,
@@ -277,7 +275,7 @@ angular.module('swarmApp.controllers', [])
                 }
             }
 
-            $scope.profileChart = {
+            $scope.profileChart2 = {
                 chart: {
                     animation: false,
                     type: 'area'
@@ -285,9 +283,6 @@ angular.module('swarmApp.controllers', [])
                 xAxis: {
                     type: 'linear',
                     minPadding: 0.1
-                },
-                yAxis: {
-                    //type: 'logarithmic'
                 },
                 plotOptions: {
                     area: {

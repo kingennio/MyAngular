@@ -9,7 +9,7 @@ angular.module('swarmApp.directives', [])
             scope: {
                 chartData: "=value"
             },
-            transclude: true,
+
             replace: true,
 
             link: function (scope, element, attrs) {
@@ -23,32 +23,9 @@ angular.module('swarmApp.directives', [])
                 };
 
                 var chart
-                var w = angular.element($window);
-
-                scope.getWindowDimensions = function () {
-                    var w = angular.element($window);
-                    return { 'h': w.outerHeight, 'w': w.outerWidth };
-                };
-
-                w.bind('resize', function () {
-                    var x
-                    var w = angular.element($window)
-                    x = scope.windowDimensions = {
-                        'h': w.outerHeight, 'w': w.outerWidth
-                    }
-                    scope.$apply();
-                });
-
-                scope.$watch(scope.windowDimensions, function (newValue, oldValue) {
-                    if (newValue === oldValue || !newValue || !chart) return;
-                    var resize = newValue / oldValue
-                    var h = chart.height
-                    var w = chart.width
-                    chart.setSize(w * resize, h * resize)
-                }, true);
-
 
                 //Update when charts data changes
+
                 scope.$watch(function () {
                     return scope.chartData;
                 }, function (value) {
