@@ -176,22 +176,23 @@
                             </div>
 
                             <div class="form-group">
+                                <div class="well well-sm">
+                                    <label for="rangeStart">Start After {{ appliance.after * 60000 | date:'HH:mm' }}</label>
+                                    <input id="rangeStart" name="rangeStart" type="range" style="width: 100%;"
+                                           min="0" max="1440" ng-model="appliance.after">
 
-                                <label for="rangeStart">Start After {{ appliance.after * 60000 | date:'HH:mm' }}</label>
-                                <input id="rangeStart" name="rangeStart" type="range" style="width: 100%;"
-                                       min="0" max="1440" ng-model="appliance.after">
-
-
-                                <label for="rangeEnd">End Before {{ appliance.endTime }}</label>
-
-                                <input id="rangeEnd" name="rangeEnd" type="range" style="width: 100%;"
-                                       min="0" max="1440" value="1440" ng-model="appliance.before">
+                                </div>
+                                <div class="well well-sm">
+                                    <label for="rangeEnd">End Before {{ appliance.before  * 60000 | date:'HH:mm' }}</label>
+                                    <input id="rangeEnd" name="rangeEnd" type="range" style="width: 100%;"
+                                           min="0" max="1440" value="1440" ng-model="appliance.before">
+                                </div>
     
-                                            <span class="help-block"
-                                                  ng-show="loginForm.startTime.$error.pattern && loginForm">
-                                                <h5 class="text-error">Incorrect Time Format, must be </mark>
-                                                    HH:MM</mark></h5>
-                                            </span>
+                                <span class="help-block"
+                                      ng-show="loginForm.startTime.$error.pattern && loginForm">
+                                    <h5 class="text-error">Incorrect Time Format, must be </mark>
+                                        HH:MM</mark></h5>
+                                </span>
 
 
                                 <pre>appliance={{appliance}}</pre>
