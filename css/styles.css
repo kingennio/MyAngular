@@ -4,7 +4,6 @@ body {
     padding-bottom: 40px;
 }
 
-
 /** 2 level sub menu **/
 .dropdown-menu-with-subs .sub-menu {
     left: 100%;
@@ -103,7 +102,7 @@ body {
 
 .bs-docs-sidenav > li > a {
     display: block;
-    width: 190px   \9;
+    width: 190px    \9;
     margin: 0 0 -1px;
     padding: 8px 14px;
     border: 1px solid #e5e5e5;
@@ -180,10 +179,40 @@ body {
     background-color: rgba(255, 0, 0, .25);
 }
 
+.ng-pristine {
+    border: 1px solid Gold;
+}
 
-.ng-pristine { border:1px solid Gold; }
-.ng-dirty.ng-valid { border:1px solid Green; }
-.ng-dirty.ng-invalid { border:1px solid Red; }
-.ng-dirty.ng-valid ~ span.ok { color:green; display:inline; }
-.ng-dirty.ng-invalid ~ span.ko { color:red; display:inline; }
+.ng-dirty.ng-valid {
+    border: 1px solid Green;
+}
+
+.ng-dirty.ng-invalid {
+    border: 1px solid Red;
+}
+
+.ng-dirty.ng-valid ~ span.ok {
+    color: green;
+    display: inline;
+}
+
+.ng-dirty.ng-invalid ~ span.ko {
+    color: red;
+    display: inline;
+}
+
+div.keep-aspect-ratio {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    content: '';
+}
+
+div.keep-aspect-ratio-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; /*fill parent*/
+}
 

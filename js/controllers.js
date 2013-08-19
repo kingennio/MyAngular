@@ -113,7 +113,11 @@ angular.module('swarmApp.controllers', [])
             xAxis: {
                 type: 'datetime',
                 currentMin: Date.UTC(2013, 12, 1, 0, 0, 0),
-                currentMax: Date.UTC(2013, 12, 3, 0, 0, 0)
+                currentMax: Date.UTC(2013, 12, 3, 0, 0, 0),
+                tickInterval: 2 * 3600 * 1000, // 2 hours
+                labels: {
+                    format: '{value: %H}'
+                }
             },
 
             series: [
@@ -128,7 +132,12 @@ angular.module('swarmApp.controllers', [])
 
         $scope.solarChart2 = {
             xAxis: {
-                type: 'datetime'
+                type: 'datetime',
+                labels: {
+                    format: '{value: %k/%M}',
+                    align: 'right',
+                    rotation: -30
+                }
             },
             yAxis: {
             },

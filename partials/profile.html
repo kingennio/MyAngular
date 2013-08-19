@@ -9,7 +9,10 @@
     <highchart id="profile1" config="profileChart"></highchart>
 
 
-    <chart value="profileChart2" type="area" style="max-width: 100%; height: auto;"/>
+    <!--<div class="keep-aspect-ratio">-->
+    <!--<chart value="profileChart2" type="area" style="height: 100%;"/>-->
+    <!--</div>-->
+    <chart ng-model="profileChart2" type="area" aspect-ratio="80%"/>
 
     <ul class="specs">
         <span>Specifications</span>
