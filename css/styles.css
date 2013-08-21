@@ -102,7 +102,7 @@ body {
 
 .bs-docs-sidenav > li > a {
     display: block;
-    width: 190px    \9;
+    width: 190px     \9;
     margin: 0 0 -1px;
     padding: 8px 14px;
     border: 1px solid #e5e5e5;
@@ -201,14 +201,14 @@ body {
     display: inline;
 }
 
-div.keep-aspect-ratio {
+.keep-aspect-ratio {
     position: relative;
     width: 100%;
     padding-top: 56.25%; /* 16:9 */
     content: '';
 }
 
-div.keep-aspect-ratio-content {
+.keep-aspect-ratio > div {
     position: absolute;
     top: 0;
     bottom: 0;

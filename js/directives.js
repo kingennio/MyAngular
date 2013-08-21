@@ -2,6 +2,30 @@
 
 angular.module('swarmApp.directives', [])
 
+    .directive('myChart', function () {
+        return {
+            restrict: 'A',
+            scope: {
+                myChart: '='
+            },
+            link: function (scope, element, attrs) {
+
+                scope.$watch("myChart", function (newOptions, oldOptions) {
+                    //do nothing when called on registration
+                    if (!newOptions || newOptions === oldOptions) return;
+
+                    if (scope.chart) scope.chart.destroy();
+
+                    var newChartOptions = angular.copy(newOptions);
+                    newChartOptions.chart.renderTo = element[0];
+                    //$.extend(true, newChartOptions, defaultChartOptions, scope.ngModel);
+                    scope.chart = new Highcharts.Chart(newChartOptions);
+
+                }, true);
+            }
+        }
+    })
+
     .directive('chart', function ($window) {
         return {
             restrict: 'E',
@@ -25,6 +49,7 @@ angular.module('swarmApp.directives', [])
                         type: attrs.type || null
                     }
                 };
+
 
                 $window.onresize = function () {
                     scope.width = $window.innerWidth;
@@ -66,5 +91,4 @@ angular.module('swarmApp.directives', [])
                 }, true);
             }
         }
-
     });
