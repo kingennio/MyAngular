@@ -286,7 +286,10 @@ angular.module('swarmApp.controllers', [])
 
             $scope.profileChart2 = {
                 chart: {
-                    animation: false,
+                    animation: {
+                        duration: 1500,
+                        easing: 'swing'
+                    },
                     type: 'area'
                 },
                 xAxis: {
@@ -294,7 +297,7 @@ angular.module('swarmApp.controllers', [])
                     minPadding: 0.1
                 },
                 plotOptions: {
-                    area: {
+                    series: {
                         step: 'left',
                         //lineWidth: 2,
                         enableMouseTracking: true,
@@ -351,7 +354,7 @@ angular.module('swarmApp.controllers', [])
                 change: function () {
                     console.log(this.myNumbers)
                     console.log(this.appliances.length)
-                    if (this.myNumbers > this.appliances.length) {
+                    while (this.myNumbers > this.appliances.length) {
                         this.appliances.push(
                             {
                                 name: undefined,
@@ -359,7 +362,8 @@ angular.module('swarmApp.controllers', [])
                                 endTime: 1440
                             }
                         )
-                    } else {
+                    }
+                    while (this.myNumbers < this.appliances.length) {
                         this.appliances.pop()
                     }
                 }

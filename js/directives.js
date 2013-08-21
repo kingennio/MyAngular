@@ -6,16 +6,17 @@ angular.module('swarmApp.directives', [])
         return {
             restrict: 'E',
             replace: true,
-            transclude: true,
+            $transclude: false,
 
             scope: {
-                ngModel: '=',
-                aspectRatio: '@'
+                options: '=',
+                aspectRatio: '@',
+                id: '@'
             },
 
             template: //'<div></div>',
             //'<div class="keep-aspect-ratio"><div class="keep-aspect-ratio-content"></div></div>',
-                '<div style="position: relative; width: 100%; padding-bottom: {{ aspectRatio }}; display: block;"><div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div></div>',
+                '<div id style="position: relative; width: 100%; padding-bottom: {{ aspectRatio }}; display: block;"><div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div></div>',
 
 
             link: function (scope, element, attrs) {
@@ -50,14 +51,14 @@ angular.module('swarmApp.directives', [])
                 //Update when charts data changes
 
                 scope.$watch(function () {
-                    return scope.ngModel
-                }, function (newModel, oldModel) {
+                    return scope.options
+                }, function (newOptions, oldOptions) {
                     //do nothing when called on registration
-                    if (!newModel || newModel === oldModel) return;
+                    if (!newOptions || newOptions === oldOptions) return;
 
                     if (chart) chart.destroy();
 
-                    var newChartOptions = angular.copy(scope.ngModel);
+                    var newChartOptions = angular.copy(newOptions);
                     newChartOptions.chart.renderTo = element.children()[0];
                     //$.extend(true, newChartOptions, defaultChartOptions, scope.ngModel);
                     chart = new Highcharts.Chart(newChartOptions);
