@@ -3,26 +3,19 @@
 angular.module('swarmApp.directives', [])
 
     .directive('myChart', function () {
-        return {
-            restrict: 'A',
-            scope: {
-                myChart: '='
-            },
-            link: function (scope, element, attrs) {
+        return function (scope, element, attrs) {
+            scope.$watch(attrs.myChart, function (newOptions, oldOptions) {
+                //do nothing when called on registration
+                if (!newOptions) return;
 
-                scope.$watch("myChart", function (newOptions, oldOptions) {
-                    //do nothing when called on registration
-                    if (!newOptions || newOptions === oldOptions) return;
+                if (scope.$$chart) scope.$$chart.destroy();
 
-                    if (scope.chart) scope.chart.destroy();
+                var newChartOptions = angular.copy(newOptions);
+                newChartOptions.chart.renderTo = element[0];
+                //$.extend(true, newChartOptions, defaultChartOptions, scope.ngModel);
+                scope.$$chart = new Highcharts.Chart(newChartOptions);
 
-                    var newChartOptions = angular.copy(newOptions);
-                    newChartOptions.chart.renderTo = element[0];
-                    //$.extend(true, newChartOptions, defaultChartOptions, scope.ngModel);
-                    scope.chart = new Highcharts.Chart(newChartOptions);
-
-                }, true);
-            }
+            });
         }
     })
 

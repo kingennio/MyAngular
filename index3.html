@@ -29,7 +29,7 @@
 
 <body ng-controller="HomeController" ng-cloak>
 
-<div id="top-nav" class="navbar navbar-fixed-top" role="navigation">
+<nav id="top-nav" class="navbar navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" ng-click="toggleNavbar()">
@@ -59,16 +59,21 @@
         </form>
     </div>
     <!-- /.navbar-collapse -->
-</div>
+</nav>
 
 <!-- topbar ends -->
 
 <div class="container">
     <div class="row">
 
+        <!-- content starts -->
+        <div class="col-sm-12 col-md-11 col-lg-10 pull-right" id="content">
+            <section class="container" ng-view></section>
+        </div>
+
 
         <!-- left menu starts  -->
-        <div id="sidebar" class="col-md-1 col-lg-2">
+        <aside id="sidebar" class="col-md-1 col-lg-2">
             <!--<div class="well well-small nav-collapse sidebar-nav">
                 <ul class="nav nav-tabs nav-stacked main-menu"> -->
             <ul class="nav nav-stacked">
@@ -118,13 +123,12 @@
                         class="glyphicon glyphicon-calendar">  Calendar</span></a>
                 <a href="grid.html" class="list-group-item"><span class="glyphicon glyphicon-th">  Grid</span></a>
             </div>
-        </div>
+        </aside>
         <!--/.well -->
 
         <!--/span-->
         <!-- left menu ends -->
-        <!-- content starts -->
-        <div class="col-sm-12 col-md-11 col-lg-10" id="content" ng-view></div>
+
 
     </div>
     <!--/fluid-row-->
@@ -143,6 +147,7 @@
 <script src="lib/highcharts.js"></script>
 
 <script src="lib/angular.js"></script>
+<!--<script src="lib/angular-route.js"></script>-->
 <script src="lib/angular-resource.js"></script>
 <script src="lib/angular-mocks.js"></script>
 

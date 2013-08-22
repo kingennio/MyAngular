@@ -1,6 +1,7 @@
-<div class="container">
-
-<h1>Simulation Setup</h1>
+<section class="container">
+<header>
+    <h1>Simulation Setup</h1>
+</header>
 
 
 <form name="loginForm" novalidate ng-submit="login()" role="form">
@@ -121,10 +122,11 @@
 
                 <br><br>-->
 
+<header>
+    <h2>Appliances Simulation Setup</h2>
+</header>
 
-<h2>Appliances Simulation Setup</h2>
-
-<div>
+<section>
     <div ng-repeat="profile in applianceProfiles">
         <div class="panel panel-primary">
 
@@ -177,13 +179,15 @@
 
                             <div class="form-group">
                                 <div class="well well-sm">
-                                    <label for="rangeStart">Start After {{ appliance.after * 60000 | date:'HH:mm' }}</label>
+                                    <label for="rangeStart">Start After {{ appliance.after * 60000 | date:'HH:mm'
+                                        }}</label>
                                     <input id="rangeStart" name="rangeStart" type="range" style="width: 100%;"
                                            min="0" max="1440" ng-model="appliance.after">
 
                                 </div>
                                 <div class="well well-sm">
-                                    <label for="rangeEnd">End Before {{ appliance.before  * 60000 | date:'HH:mm' }}</label>
+                                    <label for="rangeEnd">End Before {{ appliance.before * 60000 | date:'HH:mm'
+                                        }}</label>
                                     <input id="rangeEnd" name="rangeEnd" type="range" style="width: 100%;"
                                            min="0" max="1440" value="1440" ng-model="appliance.before">
                                 </div>
@@ -206,7 +210,7 @@
             </ul>
         </div>
     </div>
-</div>
+</section>
 
 
 Debug View:
@@ -253,4 +257,4 @@ Debug View:
 
     <button type="submit" class="btn btn-primary btn-large">Submit</button>
 </form>
-</div></div>
+</section></div>
