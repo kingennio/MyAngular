@@ -15711,7 +15711,7 @@
                  *
                  * @example
                  <example>
-                 <file name="index.html">
+                 <file name="index2.html">
                  <div ng-controller="FetchCtrl">
                  <select ng-model="method">
                  <option>GET</option>
@@ -17268,7 +17268,7 @@
          $scope.message = 'Hello World!';
        }
      </file>
-     <file name="index.html">
+     <file name="index2.html">
      <div ng-controller="LogCtrl">
      <p>Reload this page with open console, enter text and hit the log button...</p>
      Message:
@@ -20375,7 +20375,7 @@
      *
      * @example
      <example module="mySceApp">
-     <file name="index.html">
+     <file name="index2.html">
      <div ng-controller="myAppController as myCtrl">
      <i ng-bind-html="myCtrl.explicitlyTrustedHtml" id="explicitlyTrustedHtml"></i><br><br>
      <b>User comments</b><br>
@@ -23862,7 +23862,7 @@
           };
         });
      </file>
-     <file name="index.html">
+     <file name="index2.html">
      <form name="myForm">
      <div contenteditable
      name="myWidget" ng-model="userContent"
@@ -24544,7 +24544,7 @@
      *
      * @example Example that demostrates basic bindings via ngClass directive.
      <example>
-     <file name="index.html">
+     <file name="index2.html">
      <p ng-class="{strike: strike, bold: bold, red: red}">Map Syntax Example</p>
      <input type="checkbox" ng-model="bold"> bold
      <input type="checkbox" ng-model="strike"> strike
@@ -24603,7 +24603,7 @@
      Example that demostrates how addition and removal of classes can be animated.
 
      <example animations="true">
-     <file name="index.html">
+     <file name="index2.html">
      <input type="button" value="set" ng-click="myVar='my-class'">
      <input type="button" value="clear" ng-click="myVar=''">
      <br>
@@ -24666,7 +24666,7 @@
      *
      * @example
      <example>
-     <file name="index.html">
+     <file name="index2.html">
      <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
      <li ng-repeat="name in names">
      <span ng-class-odd="'odd'" ng-class-even="'even'">
@@ -24713,7 +24713,7 @@
      *
      * @example
      <example>
-     <file name="index.html">
+     <file name="index2.html">
      <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
      <li ng-repeat="name in names">
      <span ng-class-odd="'odd'" ng-class-even="'even'">
@@ -25350,7 +25350,7 @@
      *
      * @example
      <example animations="true">
-     <file name="index.html">
+     <file name="index2.html">
      Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /><br/>
      Show when checked:
      <span ng-if="checked" class="animate-if">
@@ -25458,7 +25458,7 @@
      *
      * @example
      <example animations="true">
-     <file name="index.html">
+     <file name="index2.html">
      <div ng-controller="Ctrl">
      <select ng-model="template" ng-options="t.name for t in templates">
      <option value="">(blank)</option>
@@ -26023,7 +26023,7 @@
      * This example initializes the scope to a list of names and
      * then uses `ngRepeat` to display every person:
      <example animations="true">
-     <file name="index.html">
+     <file name="index2.html">
      <div ng-init="friends = [
      {name:'John', age:25, gender:'boy'},
      {name:'Jessie', age:30, gender:'girl'},
@@ -26384,7 +26384,7 @@
      *
      * @example
      <example animations="true">
-     <file name="index.html">
+     <file name="index2.html">
      Click me: <input type="checkbox" ng-model="checked"><br/>
      <div>
      Show:
@@ -26536,7 +26536,7 @@
      *
      * @example
      <example animations="true">
-     <file name="index.html">
+     <file name="index2.html">
      Click me: <input type="checkbox" ng-model="checked"><br/>
      <div>
      Show:
@@ -26618,7 +26618,7 @@
      *
      * @example
      <example>
-     <file name="index.html">
+     <file name="index2.html">
      <input type="button" value="set" ng-click="myStyle={color:'red'}">
      <input type="button" value="clear" ng-click="myStyle={}">
      <br/>
@@ -26697,7 +26697,7 @@
      *
      * @example
      <example animations="true">
-     <file name="index.html">
+     <file name="index2.html">
      <div ng-controller="Ctrl">
      <select ng-model="selection" ng-options="item for item in items">
      </select>

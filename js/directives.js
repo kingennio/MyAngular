@@ -3,18 +3,21 @@
 angular.module('swarmApp.directives', [])
 
     .directive('myChart', function () {
+        var chart
         return function (scope, element, attrs) {
-            scope.$watch(attrs.myChart, function (newOptions, oldOptions) {
+            scope.$watch(attrs.myChart, function (newOptions, oldOptions, scope) {
                 //do nothing when called on registration
                 if (!newOptions) return;
 
-                if (scope.$$chart) scope.$$chart.destroy();
+                if (chart) {
+                    chart.destroy()
+                    console.log('>>>>>>>>>>>>')
+                }
 
                 var newChartOptions = angular.copy(newOptions);
                 newChartOptions.chart.renderTo = element[0];
                 //$.extend(true, newChartOptions, defaultChartOptions, scope.ngModel);
-                scope.$$chart = new Highcharts.Chart(newChartOptions);
-
+               chart = new Highcharts.Chart(newChartOptions);
             });
         }
     })
@@ -68,11 +71,11 @@ angular.module('swarmApp.directives', [])
 
                 //Update when charts data changes
 
-                scope.$watch(function () {
+                scope.$watch(function (scope) {
                     return scope.options
                 }, function (newOptions, oldOptions) {
                     //do nothing when called on registration
-                    if (!newOptions || newOptions === oldOptions) return;
+                    if (!newOptions) return;
 
                     if (chart) chart.destroy();
 

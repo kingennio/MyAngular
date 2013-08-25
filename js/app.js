@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('swarmApp', ['ngRoute', 'ngMockE2E', 'swarmApp.filters', 'swarmApp.services', 'swarmApp.directives', 'swarmApp.controllers', 'highcharts-ng'])
+angular.module('swarmApp', ['ngMockE2E', 'swarmApp.filters', 'swarmApp.services', 'swarmApp.directives', 'swarmApp.controllers', 'highcharts-ng'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when("/home", {controller: "HomeController", templateUrl: "partials/solar.html"})
