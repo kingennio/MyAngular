@@ -3,22 +3,30 @@
 angular.module('swarmApp.directives', [])
 
     .directive('myChart', function () {
-        var chart
-        return function (scope, element, attrs) {
-            scope.$watch(attrs.myChart, function (newOptions, oldOptions, scope) {
-                //do nothing when called on registration
-                if (!newOptions) return;
+        return {
+            scope: {
+                options: '=myChart'
+            },
 
-                if (chart) {
-                    chart.destroy()
-                    console.log('>>>>>>>>>>>>')
-                }
+            link: function (scope, element, attrs) {
+                var chart
+                scope.$watch(function (scope) {
+                    return scope.options
+                }, function (newOptions, oldOptions, scope) {
+                    //do nothing when called on registration
+                    if (!newOptions) return;
 
-                var newChartOptions = angular.copy(newOptions);
-                newChartOptions.chart.renderTo = element[0];
-                //$.extend(true, newChartOptions, defaultChartOptions, scope.ngModel);
-               chart = new Highcharts.Chart(newChartOptions);
-            });
+                    if (chart) {
+                        chart.destroy()
+                        console.log('>>>>>>>>>>>>')
+                    }
+
+                    var newChartOptions = angular.copy(newOptions);
+                    newChartOptions.chart.renderTo = element[0];
+                    //$.extend(true, newChartOptions, defaultChartOptions, scope.ngModel);
+                    chart = new Highcharts.Chart(newChartOptions);
+                });
+            }
         }
     })
 

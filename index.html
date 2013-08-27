@@ -9,14 +9,16 @@
     <meta name="author" content="Ennio Grasso">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--    <link rel="stylesheet" href="css/bootstrap3rc2.css" media="screen">
-    <link rel="stylesheet" href="css/bootstrap-glyphicons.css" media="screen">-->
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap-theme.css" media="screen">
+    -->
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!--   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+       &lt;!&ndash; Optional theme &ndash;&gt;
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.css">
 
+-->
     <link rel="stylesheet" href="css/styles.css">
 
 
@@ -28,36 +30,39 @@
 
 <body ng-controller="HomeController" ng-cloak>
 
-<nav id="top-nav" class="navbar navbar-fixed-top" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" ng-click="toggleNavbar()">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-dashboard icon-large"></span> Swarmy App</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" ng-hide="hideNavbar">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><span class="glyphicon glyphicon-home">  Home</span></a>
-            </li>
-            <li><a href="#about"><span class="glyphicon glyphicon-info-sign">  About</span></a>
-            </li>
-        </ul>
+<nav id="top-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="toggleNavbar()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-dashboard icon-large"></i> Swarmy App</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navbar-collapse" ng-hide="hideNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+                </li>
+                <li><a href="#about"><i class="glyphicon glyphicon-info-sign"></i> About</a>
+                </li>
+            </ul>
 
-        <form class="navbar-form navbar-right" role="signin">
-            <div class="form-group">
-                <input type="email" class="form-control input-sm" style="width: 160pt;" placeholder="Email">
-                <input type="password" class="form-control input-sm" style="width: 160pt;" placeholder="Password">
-                <button type="submit" class="btn btn-default btn-sm"><span
-                        class="glyphicon glyphicon-user"> Sign in</span></button>
-            </div>
-        </form>
+            <form class="navbar-form navbar-right" role="signin">
+                <div class="form-group">
+                    <input type="email" class="form-control input-sm" style="width: 160pt;" placeholder="Email">
+                    <input type="password" class="form-control input-sm" style="width: 160pt;" placeholder="Password">
+                    <button type="submit" class="btn btn-default btn-sm"><i
+                            class="glyphicon glyphicon-user"></i> Sign in
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.navbar-collapse -->
 </nav>
 
 <!-- topbar ends -->
@@ -72,34 +77,44 @@
 
 
         <!-- left menu starts  -->
-        <aside id="sidebar" class="col-md-1 col-lg-2">
+        <aside id="sidebar" class="col-md-1 col-lg-2" role="navigation">
             <!--<div class="well well-small nav-collapse sidebar-nav">
                 <ul class="nav nav-tabs nav-stacked main-menu"> -->
             <ul class="nav nav-pills nav-stacked">
                 <li>
                     <a href="#home">
                         <span class="hidden-md">
-                            <span class="glyphicon glyphicon-home">  Solar and Tariff</span>
-                            <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                            <i class="glyphicon glyphicon-certificate"></i> Solar Profiles
+                            <i class="glyphicon glyphicon-chevron-right pull-right"></i>
                         </span>
                         <span class="visible-md">
-                            <span class="glyphicon glyphicon-home"></span>
+                            <i class="glyphicon glyphicon-certificate"></i>
                         </span>
                     </a>
                 </li>
-                <li><a href="#profiles/dishmachine"><span
-                        class="glyphicon glyphicon-eye-open">  Appliance Profile</span></a>
+                <li>
+                    <a href="#home">
+                        <span class="hidden-md">
+                            <i class="glyphicon glyphicon-euro"></i> Tariff Profiles
+                            <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                        </span>
+                        <span class="visible-md">
+                            <i class="glyphicon glyphicon-euro"></i>
+                        </span>
+                    </a>
                 </li>
-                <li><a href="#setup-simulation3"><span class="glyphicon glyphicon-edit">  Simulation Setup</span></a>
+                <li><a href="#profiles/dishmachine"><i class="glyphicon glyphicon-stats"></i> Appliance Profiles</a>
                 </li>
-                <li><a href="chart.html"><span class="glyphicon glyphicon-list-alt">  Charts</span></a>
+                <li><a href="#setup-simulation"><i class="glyphicon glyphicon-calendar"></i> Simulation Setup</a>
                 </li>
-                <li><a href="typography.html"><span class="glyphicon glyphicon-font">  Typography</span></a></li>
-                <li><a href="gallery.html"><span class="glyphicon glyphicon-picture">  Gallery</span></a>
+                <li><a href="chart.html"><i class="glyphicon glyphicon-list-alt"></i> Charts</a>
                 </li>
-                <li><a href="table.html"><span class="glyphicon glyphicon-align-justify">  Tables</span></a></li>
-                <li><a href="calendar.html"><span class="glyphicon glyphicon-calendar">  Calendar</span></a></li>
-                <li><a href="grid.html"><span class="glyphicon glyphicon-th">  Grid</span></a></li>
+                <li><a href="typography.html"><i class="glyphicon glyphicon-font"></i> Typography</a></li>
+                <li><a href="gallery.html"><i class="glyphicon glyphicon-picture"></i> Gallery</a>
+                </li>
+                <li><a href="table.html"><i class="glyphicon glyphicon-align-justify"></i> Tables</a></li>
+                <li><a href="calendar.html"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
+                <li><a href="grid.html"><i class="glyphicon glyphicon-th"></i> Grid</a></li>
             </ul>
             <div class="list-group">
                 <a href="#home" class="list-group-item">
@@ -142,18 +157,27 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 -->
 
+<!--<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>-->
+
 <script src="lib/jquery-2.0.3.min.js"></script>
 <script src="lib/highcharts.js"></script>
-
-<!--<script src="lib2/angular.js"></script>
+<script src="lib2/angular.js"></script>
 <script src="lib2/angular-route.js"></script>
 <script src="lib2/angular-resource.js"></script>
-<script src="lib2/angular-mocks.js"></script>-->
+<script src="lib2/angular-mocks.js"></script>
 
-<script src="lib/angular.js"></script>
+<!--<script src="lib/angular.js"></script>
 <script src="lib/angular-resource.js"></script>
-<script src="lib/angular-mocks.js"></script>
+<script src="lib/angular-mocks.js"></script>-->
+<!--
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-resource.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-mocks.js"></script>
+-->
 
 <script src="js/app.js"></script>
 <script src="js/services.js"></script>

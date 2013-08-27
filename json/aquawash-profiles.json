@@ -1,0 +1,138 @@
+{
+    "category": "washing-machines",
+    "maker": "indesotux",
+    "modelid": "aquawash",
+    "href": "http:\/\/156.54.69.117:8080\/swarm\/base\/profiles\/washing-machines\/indesotux-aquawash",
+    "powerprofiles": [
+        {
+            "id": "cotton-full-60dg",
+            "href": "http:\/\/156.54.69.117:8080\/swarm\/base\/profiles\/washing-machines\/indesotux-aquawash\/cotton-full-60dg",
+            "totalduration": 45,
+            "totalenergy": 667.6333,
+            "energyphases": [
+                {
+                    "id": "boot-up",
+                    "duration": 2,
+                    "maxdelay": 0,
+                    "peakpower": 150.0,
+                    "meanpower": 70.0,
+                    "biasedpower": 138.0,
+                    "energy": [150.0, 22.0]
+                },
+                {
+                    "id": "heating",
+                    "duration": 13,
+                    "maxdelay": 30,
+                    "peakpower": 1950.0,
+                    "meanpower": 1700.0,
+                    "biasedpower": 1912.5,
+                    "energy": [1800.0, 1850.0, 1950.0, 1576.5, 1645.4, 1875, 1900.0]
+                },
+                {
+                    "id": "roll-one",
+                    "duration": 6,
+                    "maxdelay": 800,
+                    "peakpower": 160.0,
+                    "meanpower": 108.0,
+                    "biasedpower": 152.2,
+                    "energy": [128.0, 160.0, 158.0]
+                },
+                {
+                    "id": "roll-two",
+                    "duration": 3,
+                    "maxdelay": 5,
+                    "peakpower": 72.0,
+                    "meanpower": 52.0,
+                    "biasedpower": 69.0,
+                    "energy": [35.0, 72.0, 85.7]
+                },
+                {
+                    "id": "idle-one",
+                    "duration": 5,
+                    "maxdelay": 5,
+                    "peakpower": 4.0,
+                    "meanpower": 4.0,
+                    "biasedpower": 4.0
+                },
+                {
+                    "id": "pre-heating",
+                    "duration": 3,
+                    "maxdelay": 120,
+                    "peakpower": 72.0,
+                    "meanpower": 47.0,
+                    "biasedpower": 68.25,
+                    "energy": [22.8, 72.0, 64.7]
+                },
+                {
+                    "id": "idle-two",
+                    "duration": 4,
+                    "maxdelay": 12,
+                    "peakpower": 4.0,
+                    "meanpower": 4.0,
+                    "biasedpower": 4.0
+                },
+                {
+                    "id": "cooling-one",
+                    "duration": 4,
+                    "maxdelay": 0,
+                    "peakpower": 71.0,
+                    "meanpower": 48.0,
+                    "biasedpower": 67.55,
+                    "energy": [22.8, 71.0, 64.7, 46.6]
+                },
+                {
+                    "id": "cooling-two",
+                    "duration": 4,
+                    "maxdelay": 0,
+                    "peakpower": 73.0,
+                    "meanpower": 52.0,
+                    "biasedpower": 69.85,
+                    "energy": [62.8, 41.0, 73.0, 26.6]
+                },
+                {
+                    "id": "idle-three",
+                    "duration": 6,
+                    "maxdelay": 160,
+                    "peakpower": 4.0,
+                    "meanpower": 4.0,
+                    "biasedpower": 4.0
+                },
+                {
+                    "id": "roll-three",
+                    "duration": 15,
+                    "maxdelay": 4,
+                    "peakpower": 58.0,
+                    "meanpower": 30.0,
+                    "biasedpower": 53.800003,
+                    "energy": [0.8, 11.7, 49.6, 58.0, 18.9]
+                },
+                {
+                    "id": "spinning-one",
+                    "duration": 8,
+                    "maxdelay": 100,
+                    "peakpower": 191.0,
+                    "meanpower": 80.0,
+                    "biasedpower": 174.35,
+                    "energy": [2.0, 34.6, 45.8, 83.0, 143.5, 191.0, 184.4, 98.1]
+                },
+                {
+                    "id": "spinning-two",
+                    "duration": 9,
+                    "maxdelay": 120,
+                    "peakpower": 100.0,
+                    "meanpower": 35.0,
+                    "biasedpower": 90.25,
+                    "energy": [6.0, 34.6, 45.8, 83.0, 100.0, 22.0, 18.4, 6.2, 0.8]
+                },
+                {
+                    "id": "idle-four",
+                    "duration": 15,
+                    "maxdelay": 30,
+                    "peakpower": 2.0,
+                    "meanpower": 2.0,
+                    "biasedpower": 2.0
+                }
+            ]
+        }
+    ]
+}

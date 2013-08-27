@@ -229,9 +229,11 @@ angular.module('swarmApp.controllers', [])
         }
     }])
 
-    .controller("PowerProfileController", ["$rootScope", "$scope", "MyService", function ($rootScope, $scope, MyService) {
+    .controller("PowerProfileController", ["$rootScope", "$scope", "MyService", "ChartBuilder", function ($rootScope, $scope, MyService, ChartBuilder) {
         MyService.getPowerProfile('dishmachine').then(function (data) {
             $scope.profile = data.data
+
+
             var phases = data.data.energyphases.energyphase
             var totalDuration = 0
             var seriesData = []
@@ -284,49 +286,52 @@ angular.module('swarmApp.controllers', [])
                 }
             }
 
-            $scope.profileChart2 = {
-                chart: {
-                    animation: {
-                        duration: 1500,
-                        easing: 'swing'
-                    },
-                    type: 'area'
-                },
-                xAxis: {
-                    type: 'linear',
-                    minPadding: 0.1
-                },
-                plotOptions: {
-                    series: {
-                        step: 'left',
-                        //lineWidth: 2,
-                        enableMouseTracking: true,
-                        marker: {
-                            enabled: false
-                        }
-                        //pointPadding: 0,
-                        // groupPadding: 0,
-                        // borderWidth: 0
-                        //pointInterval: 3600000, // 1 hour
-                        //pointStart: Date.UTC(2013, 0, 1, 0, 0, 0)
-                    }
-                },
+            $scope.profileChart2 = ChartBuilder.applianceChart($scope.profile)
 
-                series: [
-                    {
-                        data: seriesData,
-                        name: 'Phases and their respective Max delays'
-                    }
-                ],
-                title: {
-                    text: 'Dish Machine Power Profile'
-                }
-            }
+            /*
+             $scope.profileChart2 = {
+             chart: {
+             animation: {
+             duration: 1500,
+             easing: 'swing'
+             },
+             type: 'area'
+             },
+             xAxis: {
+             type: 'linear',
+             minPadding: 0.1
+             },
+             plotOptions: {
+             series: {
+             step: 'left',
+             //lineWidth: 2,
+             enableMouseTracking: true,
+             marker: {
+             enabled: false
+             }
+             //pointPadding: 0,
+             // groupPadding: 0,
+             // borderWidth: 0
+             //pointInterval: 3600000, // 1 hour
+             //pointStart: Date.UTC(2013, 0, 1, 0, 0, 0)
+             }
+             },
+
+             series: [
+             {
+             data: seriesData,
+             name: 'Phases and their respective Max delays'
+             }
+             ],
+             title: {
+             text: 'Dish Machine Power Profile'
+             }
+             }*/
         })
     }])
 
 
-    .controller("SimulationSetupController", ["$scope", "MyService", function ($scope, MyService) {
+    .controller("SimulationSetupController", ["$scope", "MyService", "ChartBuilder", function ($scope, MyService, ChartBuilder) {
         var profileIds = ['uno', 'due', 'tre', '4to']
         var applianceProfiles = []
 
@@ -339,31 +344,34 @@ angular.module('swarmApp.controllers', [])
 
         for (var i = 0; i < profileIds.length; ++i) {
             applianceProfiles.push({
+                chart: ChartBuilder.getCachedChart(profileIds[i]),
                 profileId: profileIds[i],
-                myNumbers: 1,
+                numberOfInstances: 0,
                 appliances: [
-                    {
-                        name: undefined,
-                        startTime: '00:00',
-                        endTime: '23:59',
-                        after: 0,
-                        before: 1440
-                    }
+                    /*                    {
+                     name: undefined,
+                     startTime: '00:00',
+                     endTime: '23:59',
+                     after: 0,
+                     before: 1440
+                     }*/
                 ],
 
                 change: function () {
-                    console.log(this.myNumbers)
+                    console.log(this.numberOfInstances)
                     console.log(this.appliances.length)
-                    while (this.myNumbers > this.appliances.length) {
+                    while (this.numberOfInstances > this.appliances.length) {
                         this.appliances.push(
                             {
-                                name: undefined,
-                                startTime: 0,
-                                endTime: 1440
+                                name: this.profileId + '-machine' + (1 + this.appliances.length),
+                                startTime: '00:00',
+                                endTime: '23:59',
+                                after: 0,
+                                before: 1440
                             }
                         )
                     }
-                    while (this.myNumbers < this.appliances.length) {
+                    while (this.numberOfInstances < this.appliances.length) {
                         this.appliances.pop()
                     }
                 }
