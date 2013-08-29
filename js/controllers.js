@@ -287,47 +287,10 @@ angular.module('swarmApp.controllers', [])
             }
 
             $scope.profileChart2 = ChartBuilder.applianceChart($scope.profile)
-
-            /*
-             $scope.profileChart2 = {
-             chart: {
-             animation: {
-             duration: 1500,
-             easing: 'swing'
-             },
-             type: 'area'
-             },
-             xAxis: {
-             type: 'linear',
-             minPadding: 0.1
-             },
-             plotOptions: {
-             series: {
-             step: 'left',
-             //lineWidth: 2,
-             enableMouseTracking: true,
-             marker: {
-             enabled: false
-             }
-             //pointPadding: 0,
-             // groupPadding: 0,
-             // borderWidth: 0
-             //pointInterval: 3600000, // 1 hour
-             //pointStart: Date.UTC(2013, 0, 1, 0, 0, 0)
-             }
-             },
-
-             series: [
-             {
-             data: seriesData,
-             name: 'Phases and their respective Max delays'
-             }
-             ],
-             title: {
-             text: 'Dish Machine Power Profile'
-             }
-             }*/
         })
+
+        var pp = MyService.getProfile()
+        $scope.profileChart3 = ChartBuilder.powerProfileChart(pp)
     }])
 
 

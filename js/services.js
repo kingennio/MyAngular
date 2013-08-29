@@ -2,42 +2,7 @@
 
 /* Services */
 
-(function (json) {
-
-    var composeSeries = function (phases) {
-        var totalDuration = 0
-        var seriesSet = []
-        for (var i = 0; i < phases.length; ++i) {
-            var phase = phases[i]
-            var series = {}
-            series.name = phase.id
-            series.pointStart = totalDuration
-
-            if (angular.isArray(phase.energy) && phase.energy.length > 0) {
-                series.pointInterval = phase.duration / phase.energy.length
-                series.data = phase.energy
-            } else {
-                series.pointInterval = phase.duration
-                series.data = [phase.meanpower]
-            }
-
-            seriesSet.push(series)
-            totalDuration += phase.duration + 4
-        }
-        return seriesSet
-    }
-
-    var machineSpecs = angular.fromJson(json)
-    var profile = machineSpecs.powerprofiles[0]
-    if (!profile.energyphases) return null
-    var seriesSet = composeSeries(profile.energyphases)
-    var chartOption = {
-        series: seriesSet
-    }
-    return chartOption
-
-
-}({
+var jsonaquawash = {
     "category": "washing-machines",
     "maker": "indesotux",
     "modelid": "aquawash",
@@ -174,7 +139,7 @@
             ]
         }
     ]
-}))
+};
 
 
 angular.module('swarmApp.services', ['ngResource'])
@@ -198,26 +163,45 @@ angular.module('swarmApp.services', ['ngResource'])
                         series.name = phase.id
                         series.pointStart = totalDuration
 
-                        if (angular.isArray(phase.energy) && phase.energy.length > 0) {
-                            series.pointInterval = phase.duration / phase.energy.length
+                        if (angular.isArray(phase.energy) && phase.energy.length > 1) {
+                            series.pointInterval = phase.duration / (phase.energy.length - 1)
                             series.data = phase.energy
                         } else {
                             series.pointInterval = phase.duration
-                            series.data = [phase.meanpower]
+                            series.data = [phase.meanpower, phase.meanpower]
                         }
-
                         seriesSet.push(series)
-                        totalDuration += phase.duration + 4
+                        totalDuration += phase.duration + 1
                     }
                     return seriesSet
                 }
 
-
                 if (!profile.energyphases) return null
                 var profileChart = chartsCache[profile.id]
                 if (!profileChart) {
-                    var series = composeSeries(profile.energyphases)
+                    var seriesSet = composeSeries(profile.energyphases)
+                    var profileChart = {
+                        chart: {
+                            type: 'areaspline'
+                        },
+                        yAxis: {
+                            //type: 'logarithmic'
+                        },
+                        plotOptions: {
+                            series: {
+
+                                enableMouseTracking: true,
+                                marker: {
+                                    enabled: false
+                                }
+
+                            }
+                        },
+                        series: seriesSet
+                    }
+                    chartsCache[profile.id] = profileChart
                 }
+                return profileChart
             },
 
             applianceChart: function (jsonProfile) {
@@ -373,22 +357,8 @@ angular.module('swarmApp.services', ['ngResource'])
                 })
             return defer.promise;
         }
-        restService.getProfile = {
-            "@id": "5",
-            "@href": "http://156.54.69.117:8080/swarm/base/profiles/dishmachine",
-            "totalduration": "45",
-            "totalenergy": "667.6333",
-            "energyphases": {
-                "energyphase": [
-                    {"@id": "1", "@duration": "2", "@maxdelay": "0", "@peakpower": "150.0", "@meanpower": "70.0", "@biasedpower": "138.0"},
-                    {"@id": "2", "@duration": "13", "@maxdelay": "30", "@peakpower": "1950.0", "@meanpower": "1700.0", "@biasedpower": "1912.5"},
-                    {"@id": "3", "@duration": "6", "@maxdelay": "800", "@peakpower": "160.0", "@meanpower": "108.0", "@biasedpower": "152.2"},
-                    {"@id": "4", "@duration": "5", "@maxdelay": "4", "@peakpower": "1960.0", "@meanpower": "1250.0", "@biasedpower": "1853.5"},
-                    {"@id": "5", "@duration": "2", "@maxdelay": "0", "@peakpower": "170.0", "@meanpower": "166.0", "@biasedpower": "169.4"},
-                    {"@id": "6", "@duration": "6", "@maxdelay": "44", "@peakpower": "1980.0", "@meanpower": "1750.0", "@biasedpower": "1945.5"},
-                    {"@id": "7", "@duration": "11", "@maxdelay": "350", "@peakpower": "17.0", "@meanpower": "8.0", "@biasedpower": "15.65"}
-                ]
-            }
+        restService.getProfile = function () {
+            return angular.fromJson(jsonaquawash).powerprofiles[0]
         }
         return restService
     });
